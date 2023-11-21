@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion androidVersion.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion androidVersion.minSdkVersion
+        targetSdkVersion androidVersion.targetSdkVersion
+        testInstrumentationRunner androidVersion.testInstrumentationRunner
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    api androidX.appcompat
+    api androidX.material
+    api androidX.junit
+    api androidX.extjunit
+    api androidX.espresso
+
+    api api.okhttp
+    api api.retrofitGson
+    api api.rxjava
+    api api.rxAndroid
+    api api.retrofit
+    api api.retrofitAdapter
+    api api.glide
+    api api.transformations
+    api api.fastJson
+}

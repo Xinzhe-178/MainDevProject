@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_card_dialog_hint_bg_shape">
+
+        <TextView
+            android:id="@+id/tv_title_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:gravity="center"
+            android:text="早上好"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_17"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_hint">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_7"
+                android:gravity="center|start"
+                android:text="@string/str_home_card_dia_hint_text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.example.lib_common.view.GradientView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_7"
+            app:gv_direction="TOP_BOTTOM"
+            app:gv_end_color="@color/orange_80"
+            app:gv_start_color="@color/orange"
+            app:layout_constraintTop_toTopOf="@id/nsv_view" />
+
+        <com.example.lib_common.view.GradientView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_7"
+            app:gv_direction="BOTTOM_TOP"
+            app:gv_end_color="@color/orange_80"
+            app:gv_start_color="@color/orange"
+            app:layout_constraintBottom_toBottomOf="@id/nsv_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

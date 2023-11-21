@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.lib_bean.bean.HomeRecyclerGroupBean.RightGroup" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_12"
+        app:cardMaxElevation="@dimen/dp_2"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="@dimen/dp_41"
+                android:layout_height="@dimen/dp_41"
+                android:layout_margin="@dimen/dp_8"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:roundImageUrl="@{model.imageUrl}"
+                app:round_angle="@{8}" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_5"
+                android:ellipsize="end"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@{model.rightTitle,default=虾仁滑蛋}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_image"
+                app:layout_constraintRight_toLeftOf="@id/v_sv"
+                app:layout_constraintTop_toTopOf="@id/iv_image"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/ic_fire"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_fire_icon"
+                android:visibility="@{model.isSeckill?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                app:layout_constraintLeft_toLeftOf="@id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_originalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_3"
+                android:maxLines="1"
+                android:text='@{"￥"+model.originalPrice,default="￥32.19"}'
+                android:textColor="@color/gray_8f"
+                android:textSize="@dimen/sp_11"
+                android:visibility="@{model.isSeckill?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                app:layout_constraintLeft_toRightOf="@id/ic_fire"
+                app:layout_goneMarginLeft="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="———————"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_13"
+                android:visibility="@{model.isSeckill?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@id/tv_originalPrice"
+                app:layout_constraintLeft_toLeftOf="@id/tv_originalPrice"
+                app:layout_constraintRight_toRightOf="@id/tv_originalPrice"
+                app:layout_constraintTop_toTopOf="@id/tv_originalPrice"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:maxLines="1"
+                android:text='@{"￥"+model.price,default="￥12.00"}'
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_13"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                app:layout_constraintLeft_toRightOf="@id/tv_originalPrice"
+                app:layout_goneMarginLeft="0dp" />
+
+            <com.example.lib_common.view.StepperView
+                android:id="@+id/v_sv"
+                android:layout_width="@dimen/dp_65"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_10"
+                app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_image"
+                app:sv_defSelectCount="1"
+                app:sv_maxSelectCount="10"
+                app:sv_minSelectCount="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

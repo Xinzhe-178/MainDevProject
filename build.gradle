@@ -1,0 +1,26 @@
+apply from: 'config.gradle'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url = "http://maven.aliyun.com/nexus/content/groups/public/" }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.2"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url = "http://maven.aliyun.com/nexus/content/groups/public/" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

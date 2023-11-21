@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape
+            android:shape="oval"
+            android:useLevel="false">
+            <size
+                android:width="@dimen/dp_40"
+                android:height="@dimen/dp_40" />
+            <solid android:color="@color/pink" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="@dimen/dp_5"
+        android:drawable="@drawable/ic_close"
+        android:end="@dimen/dp_5"
+        android:gravity="center"
+        android:start="@dimen/dp_5"
+        android:top="@dimen/dp_5" />
+
+</layer-list>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_card_dialog_hint_bg_shape">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:src="@drawable/ic_home_card_dialog_hint3" />
+
+        <include layout="@layout/home_card_dialog_close_btn_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

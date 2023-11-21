@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.lib_bean.bean.ConstellationBean.DataDTO" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_constellation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_150"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="5"
+                tools:listitem="@layout/constellation_item_layout" />
+
+            <ImageView
+                android:id="@+id/v_sle"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/cons_view_white_shape_bg"
+            app:layout_constraintTop_toBottomOf="@id/rv_constellation">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_10"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center|start"
+                        android:maxLines="1"
+                        android:text='@{"星座："+model.title,default=星座白羊座}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center|start"
+                        android:maxLines="1"
+                        android:text='@{"类型："+model.type,default=类型今日运势}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="@id/tv_title"
+                        app:layout_constraintStart_toStartOf="@id/tv_title"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+                    <TextView
+                        android:id="@+id/tv_luckyconstellation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center|start"
+                        android:maxLines="1"
+                        android:text='@{"幸运星座："+model.luckyconstellation,default=幸运星座白羊座}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="@id/tv_type"
+                        app:layout_constraintStart_toStartOf="@id/tv_type"
+                        app:layout_constraintTop_toBottomOf="@id/tv_type" />
+
+                    <TextView
+                        android:id="@+id/tv_all"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:gravity="center|start"
+                        android:text='@{"整体："+model.fortunetext.all,default=整体运势稍微偏低困惑也是一个让你反思和调整的好机会}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="@id/tv_luckyconstellation"
+                        app:layout_constraintStart_toStartOf="@id/tv_luckyconstellation"
+                        app:layout_constraintTop_toBottomOf="@id/tv_luckyconstellation" />
+
+                    <TextView
+                        android:id="@+id/tv_love"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:gravity="center|start"
+                        android:text='@{"爱情："+model.fortunetext.love,default=整体运势稍微偏低困惑也是一个让你反思和调整的好机会}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="@id/tv_all"
+                        app:layout_constraintStart_toStartOf="@id/tv_all"
+                        app:layout_constraintTop_toBottomOf="@id/tv_all" />
+
+                    <TextView
+                        android:id="@+id/tv_work"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:gravity="center|start"
+                        android:text='@{"工作："+model.fortunetext.work,default=整体运势稍微偏低困惑也是一个让你反思和调整的好机会}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="@id/tv_love"
+                        app:layout_constraintStart_toStartOf="@id/tv_love"
+                        app:layout_constraintTop_toBottomOf="@id/tv_love" />
+
+                    <TextView
+                        android:id="@+id/tv_money"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:gravity="center|start"
+                        android:text='@{"经济："+model.fortunetext.money,default=整体运势稍微偏低困惑也是一个让你反思和调整的好机会}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="@id/tv_work"
+                        app:layout_constraintStart_toStartOf="@id/tv_work"
+                        app:layout_constraintTop_toBottomOf="@id/tv_work" />
+
+                    <TextView
+                        android:id="@+id/tv_health"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:gravity="center|start"
+                        android:text='@{"健康："+model.fortunetext.health,default=整体运势稍微偏低困惑也是一个让你反思和调整的好机会}'
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="@id/tv_money"
+                        app:layout_constraintStart_toStartOf="@id/tv_money"
+                        app:layout_constraintTop_toBottomOf="@id/tv_money" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.networkpro.viewmodel.LoginChildViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_viewpage_child_view_bg"
+        android:paddingBottom="@dimen/dp_25">
+
+        <EditText
+            android:id="@+id/ed_user"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:layout_margin="@dimen/dp_30"
+            android:background="@drawable/login_ed_bg"
+            android:gravity="center|left"
+            android:hint="请输入用户名"
+            android:inputType="text"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:paddingStart="@dimen/dp_20"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toTopOf="@id/ed_pwd"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/ed_pwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_42"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/login_ed_bg"
+            android:gravity="center|left"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:paddingStart="@dimen/dp_20"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toTopOf="@id/tv_register"
+            app:layout_constraintLeft_toLeftOf="@id/ed_user"
+            app:layout_constraintRight_toRightOf="@id/ed_user"
+            app:layout_constraintTop_toBottomOf="@id/ed_user"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:padding="@dimen/dp_15"
+            android:text="立即注册"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_login"
+            app:layout_constraintLeft_toLeftOf="@id/ed_pwd"
+            app:layout_constraintRight_toRightOf="@id/ed_pwd"
+            app:layout_constraintTop_toBottomOf="@id/ed_pwd"
+            app:onClickCall="@{viewModel.onLoginTvRegister}"
+            tools:ignore="HardcodedText,UsingOnClickInXml" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_30"
+            android:background="@drawable/login_ed_bg"
+            android:gravity="center"
+            android:text="立即登录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ed_pwd"
+            app:layout_constraintRight_toRightOf="@id/ed_pwd"
+            app:layout_constraintTop_toBottomOf="@id/tv_register"
+            app:onClickCall="@{viewModel.onImmediatelyLoginClick}"
+            tools:ignore="HardcodedText,UsingOnClickInXml" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

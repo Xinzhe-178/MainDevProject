@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.example.networkpro.ui.activity.PlaceOrderActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_light">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/dp_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_top_bar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_50">
+
+                <FrameLayout
+                    android:id="@+id/fl_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/place_order_top_gradient_bg"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.example.networkpro.ui.view.PlaceOrderTopView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_10"
+                        app:layout_constraintTop_toBottomOf="@id/tv_list" />
+
+                </FrameLayout>
+
+                <com.example.networkpro.ui.view.PlaceOrderShopListView
+                    android:id="@+id/tv_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    app:layout_constraintTop_toBottomOf="@id/fl_top" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_margin="@dimen/dp_10"
+                    android:background="@drawable/place_order_top_white_bg"
+                    android:gravity="center"
+                    android:text="备注等模块"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/dp_20"
+                    app:layout_constraintTop_toBottomOf="@id/tv_list" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.example.lib_common.topbar.TopBarView
+            android:id="@+id/v_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_group_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_margin="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/place_order_bottom_shape_bg"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/dp_10"
+                android:text="￥43.3"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tv_other_payment"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tv_other_payment"
+                android:layout_width="@dimen/dp_85"
+                android:layout_height="match_parent"
+                android:background="#504F4F"
+                android:gravity="center"
+                android:text="找人付"
+                android:textColor="#FAB639"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tv_commit"
+                app:onClickCall="@{activity.onOtherPaymentClick}"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_commit"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="match_parent"
+                android:background="@drawable/place_order_bottom_commit_shape_bg"
+                android:gravity="center"
+                android:text="提交订单"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:onClickCall="@{activity.onCommitClick}"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

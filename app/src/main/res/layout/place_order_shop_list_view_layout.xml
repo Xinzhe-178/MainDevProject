@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isExpand"
+            type="Boolean" />
+
+        <variable
+            name="isShowExpand"
+            type="Boolean" />
+
+        <variable
+            name="view"
+            type="com.example.networkpro.ui.view.PlaceOrderShopListView" />
+
+        <variable
+            name="shopName"
+            type="String" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/place_order_top_white_bg"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:enabled="true"
+            android:maxLines="1"
+            android:text="@{shopName,default=茶百道酒仙桥店}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_line_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0.5"
+            android:layout_marginTop="@dimen/sp_10"
+            android:background="#EAE8E8"
+            app:layout_constraintTop_toBottomOf="@id/tv_shop_name" />
+
+        <LinearLayout
+            android:id="@+id/ll_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sp_10"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/v_line_top" />
+
+        <LinearLayout
+            android:id="@+id/tv_expand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/ll_list"
+            app:onClickCall="@{view.onExpandClick}"
+            app:onIsClosureAntiShake="@{true}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawableEnd="@{isExpand?@drawable/ic_place_order_list_down:@drawable/ic_place_order_list_up}"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text='@{isExpand?"展开更多":"点击收起"}'
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_11"
+                android:visibility="@{isShowExpand?View.VISIBLE:View.GONE}"
+                tools:ignore="UseCompatTextViewDrawableXml" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/v_line_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0.5"
+            android:layout_marginTop="@dimen/sp_10"
+            android:background="#EAE8E8"
+            app:layout_constraintTop_toBottomOf="@id/tv_expand" />
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sp_10"
+            android:ellipsize="end"
+            android:enabled="true"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_line_bottom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcuts_scan"
+        android:shortcutId="SHORTCUTS_SCAN_ID"
+        android:shortcutShortLabel="@string/str_shortcuts_scan">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="com.example.lib_common.activity.CaptureActivity"
+            android:targetClass="com.example.networkpro.ui.activity.ShortcutCommonActivity"
+            android:targetPackage="com.example.networkpro" />
+
+        <capability-binding android:key="actions.intent.CREATE_MESSAGE" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcuts_update"
+        android:shortcutId="SHORTCUTS_EDIT_SHOP_ID"
+        android:shortcutShortLabel="@string/str_shortcuts_edit_shop">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="com.example.networkpro.ui.activity.UpdateFoodActivity"
+            android:targetClass="com.example.networkpro.ui.activity.ShortcutCommonActivity"
+            android:targetPackage="com.example.networkpro" />
+
+        <capability-binding android:key="actions.intent.CREATE_MESSAGE" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcuts_seek"
+        android:shortcutId="SHORTCUTS_SEEK_ID"
+        android:shortcutShortLabel="@string/str_shortcuts_seek">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="com.example.networkpro.ui.activity.SeekInputActivity"
+            android:targetClass="com.example.networkpro.ui.activity.ShortcutCommonActivity"
+            android:targetPackage="com.example.networkpro" />
+
+        <capability-binding android:key="actions.intent.CREATE_MESSAGE" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcuts_beauty"
+        android:shortcutId="SHORTCUTS_BEAUTY_ID"
+        android:shortcutShortLabel="@string/str_shortcuts_beauty">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="com.example.networkpro.ui.activity.MainActivity.HomeNewFragment.BeautyFragment"
+            android:targetClass="com.example.networkpro.ui.activity.ShortcutCommonActivity"
+            android:targetPackage="com.example.networkpro" />
+
+        <capability-binding android:key="actions.intent.CREATE_MESSAGE" />
+    </shortcut>
+
+</shortcuts>

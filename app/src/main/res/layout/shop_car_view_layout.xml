@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="@drawable/home_popup_view_bg"
+            android:paddingStart="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_6"
+            android:paddingEnd="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_3">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_shop_car"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_2"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:overScrollMode="always"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="10"
+                tools:listitem="@layout/home_shop_car_adapter_layout" />
+
+            <com.example.lib_common.view.GradientView
+                android:id="@+id/v_top_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_7"
+                app:gv_direction="TOP_BOTTOM"
+                app:gv_end_color="@color/pink_80"
+                app:gv_start_color="@color/pink"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.example.lib_common.view.GradientView
+                android:id="@+id/v_bottom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_7"
+                app:gv_direction="BOTTOM_TOP"
+                app:gv_end_color="@color/pink_80"
+                app:gv_start_color="@color/pink"
+                app:layout_constraintBottom_toBottomOf="@id/rv_home_shop_car" />
+
+            <TextView
+                android:id="@+id/tv_def_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="空空如也"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</layout>

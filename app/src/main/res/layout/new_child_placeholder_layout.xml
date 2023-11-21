@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/dp_10">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_280"
+            android:layout_marginEnd="@dimen/dp_5"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toStartOf="@id/view_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_170"
+            android:layout_marginEnd="@dimen/dp_5"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view_1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_250"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/view_2"
+            app:layout_constraintStart_toStartOf="@id/view_2"
+            app:layout_constraintTop_toBottomOf="@id/view_2">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_195"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/view_1"
+            app:layout_constraintStart_toStartOf="@id/view_1"
+            app:layout_constraintTop_toBottomOf="@id/view_1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_220"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/view_3"
+            app:layout_constraintStart_toStartOf="@id/view_3"
+            app:layout_constraintTop_toBottomOf="@id/view_3">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_220"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/view_4"
+            app:layout_constraintStart_toStartOf="@id/view_4"
+            app:layout_constraintTop_toBottomOf="@id/view_4">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_7"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_260"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/view_5"
+            app:layout_constraintStart_toStartOf="@id/view_5"
+            app:layout_constraintTop_toBottomOf="@id/view_5">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_8"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_260"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardMaxElevation="@dimen/dp_2"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/view_6"
+            app:layout_constraintStart_toStartOf="@id/view_6"
+            app:layout_constraintTop_toBottomOf="@id/view_6">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

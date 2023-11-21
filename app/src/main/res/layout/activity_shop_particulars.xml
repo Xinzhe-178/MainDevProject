@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.networkpro.viewmodel.ShopParticularsViewModel" />
+
+        <variable
+            name="maxNum"
+            type="Integer" />
+
+        <variable
+            name="currentIndex"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:onScrollChange="@{viewModel.onScrollChange}">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vp_viewPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="h,1:1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:onPageSelected="@{viewModel.onPageSelected}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_20"
+                    android:background="@drawable/shop_par_index_bg_shap"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_3"
+                    android:paddingRight="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:text='@{currentIndex+"/"+maxNum}'
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@id/vp_viewPage"
+                    app:layout_constraintRight_toRightOf="@id/vp_viewPage" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/vp_viewPage">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/dp_15"
+                        app:cardMaxElevation="@dimen/dp_5"
+                        app:cardUseCompatPadding="true">
+
+                        <TextView
+                            android:id="@+id/tv_test_show"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp_5"
+                            android:gravity="center|left|top"
+                            android:padding="@dimen/dp_8"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_18"
+                            tools:ignore="RtlHardcoded" />
+                    </androidx.cardview.widget.CardView>
+
+                    <!--播放全屏视频时用-->
+                    <FrameLayout
+                        android:id="@+id/video_fullView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
+
+                    <com.example.lib_common.web.BaseX5WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/loading"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="正在加载，请稍后"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/sp_16"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.example.lib_common.topbar.TopBarView
+            android:id="@+id/view_topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="cn.yan.slidelayout.MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Demo为SlideLayout上下左右滑动、配合AbsListView、ViewPager、ScrollView等滑动效果。" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.lib_common.view.slidlayout.SlideLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                app:slideDirection="fromTop">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_dark"
+                    android:gravity="center"
+                    android:text="我是从上滑SlideLayout" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@android:color/holo_red_light"
+                    android:gravity="center"
+                    android:text="删除" />
+            </com.example.lib_common.view.slidlayout.SlideLayout>
+
+            <com.example.lib_common.view.slidlayout.SlideLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                app:slideDirection="fromBottom">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_dark"
+                    android:gravity="center"
+                    android:text="我是从下滑SlideLayout" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@android:color/holo_red_light"
+                    android:gravity="center"
+                    android:text="删除" />
+            </com.example.lib_common.view.slidlayout.SlideLayout>
+
+            <com.example.lib_common.view.slidlayout.SlideLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                app:slideDirection="fromLeft">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_dark"
+                    android:gravity="center"
+                    android:text="我是从左滑SlideLayout" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_red_light"
+                    android:gravity="center"
+                    android:text="删除" />
+            </com.example.lib_common.view.slidlayout.SlideLayout>
+
+            <com.example.lib_common.view.slidlayout.SlideLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                app:slideDirection="fromRight">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_dark"
+                    android:gravity="center"
+                    android:text="我是从右滑SlideLayout" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_red_light"
+                    android:gravity="center"
+                    android:text="删除" />
+            </com.example.lib_common.view.slidlayout.SlideLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ListView
+                android:id="@+id/listview_id"
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:background="@android:color/darker_gray" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.example.lib_common.view.slidlayout.SlideLayout
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                app:slideCriticalValue="20dp"
+                app:slideDirection="fromLeft">
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_bright" />
+                <!--                android:entries="@array/demo_array"-->
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_green_light"
+                    android:gravity="center"
+                    android:text="侧滑区域" />
+            </com.example.lib_common.view.slidlayout.SlideLayout>
+
+            <com.example.lib_common.view.slidlayout.SlideLayout
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="10dp"
+                app:slideCriticalValue="20dp"
+                app:slideDirection="fromRight">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_bright">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="4096dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ScrollView" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/sqrt_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/sqrt_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/sqrt_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/sqrt_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/sqrt_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/sqrt_icon" />
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_green_light"
+                    android:gravity="center"
+                    android:text="侧滑区域" />
+            </com.example.lib_common.view.slidlayout.SlideLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

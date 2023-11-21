@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UpdateDataView">
+        <attr name="select_control" />
+    </declare-styleable>
+    <attr name="select_control">
+        <enum name="textView" value="1" />
+        <enum name="editText" value="2" />
+    </attr>
+
+    <declare-styleable name="LineTabView">
+        <attr name="ltv_text_def_size" format="dimension" />
+        <attr name="ltv_text_sel_size" format="dimension" />
+        <attr name="ltv_def_text_color" format="color" />
+        <attr name="ltv_sel_text_color" format="color" />
+        <attr name="ltv_sel_is_bold" format="boolean" />
+        <attr name="ltv_tab_width" format="dimension" />
+        <attr name="ltv_tab_height" format="dimension" />
+        <attr name="ltv_is_scroll" format="boolean" />
+    </declare-styleable>
+</resources>

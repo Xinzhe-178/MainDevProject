@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.networkpro.viewmodel.MasterViewModel" />
+
+        <variable
+            name="userAvatar"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/view_corners_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/master_zoom_corners_bg_shape"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_user_avatar"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:scaleType="centerCrop"
+            app:image_url_round="@{userAvatar}"
+            app:layout_constraintBottom_toBottomOf="@id/view_corners_bg"
+            app:layout_constraintEnd_toEndOf="@id/view_corners_bg"
+            app:layout_constraintStart_toStartOf="@id/view_corners_bg"
+            app:onClickCall="@{viewModel.onAvatarClick}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

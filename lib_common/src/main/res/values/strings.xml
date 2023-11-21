@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NetWorkPro</string>
+
+    <string name="common_load_hint">心急吃不了热豆腐哦~></string>
+
+    <string name="str_common_dialog_main_hint_text">确定</string>
+    <string name="str_common_dialog_auxiliary_hint_text">取消</string>
+    <string name="str_common_dialog_ed_hint_text">预设文案</string>
+</resources>

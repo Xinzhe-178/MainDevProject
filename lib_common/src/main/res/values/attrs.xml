@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    步进器-->
+    <declare-styleable name="StepperView">
+        <attr name="sv_defSelectCount" format="integer" />
+        <attr name="sv_maxSelectCount" format="integer" />
+        <attr name="sv_minSelectCount" format="integer" />
+        <attr name="sv_arriveMaxHintText" format="string" />
+        <attr name="sv_arriveMinHintText" format="string" />
+        <attr name="sv_arriveMaxBtnIsGrey" format="boolean" />
+        <attr name="sv_arriveMinBtnIsGrey" format="boolean" />
+    </declare-styleable>
+
+    <!--    PullToZoomListViewEx背景缩放框架-->
+    <declare-styleable name="PullToZoomView">
+        <attr name="headerView" format="reference" />
+        <attr name="contentView" format="reference" />
+        <attr name="zoomView" format="reference" />
+        <attr name="isHeaderParallax" format="boolean" />
+    </declare-styleable>
+
+    <!--    View宽高比例限定-->
+    <declare-styleable name="MaxLayout">
+        <attr name="ml_maxWidth" format="dimension" />
+        <attr name="ml_maxheight" format="dimension" />
+        <attr name="ml_ratio" format="float" />
+        <attr name="ml_ratio_standard">
+            <enum name="w_h" value="1" />
+            <enum name="h_w" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SlideLayout">
+        <attr name="slideDirection">
+            <enum name="fromRight" value="0" />
+            <enum name="fromLeft" value="1" />
+            <enum name="fromTop" value="2" />
+            <enum name="fromBottom" value="3" />
+        </attr>
+
+        <attr name="slideCriticalValue" format="dimension" />
+    </declare-styleable>
+
+    <!--    跑马灯View-->
+    <declare-styleable name="TextBannerView">
+        <attr name="setInterval" format="integer|reference" />
+        <attr name="setAnimDuration" format="integer|reference" />
+        <attr name="setTextSize" format="dimension|reference" />
+        <attr name="setTextColor" format="color|reference" />
+        <attr name="setSingleLine" format="boolean" />
+
+        <attr name="setFlags">
+            <enum name="strike" value="0" />
+            <enum name="underline" value="1" />
+        </attr>
+        <attr name="setGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="setDirection">
+            <enum name="bottom_to_top" value="0" />
+            <enum name="top_to_bottom" value="1" />
+            <enum name="right_to_left" value="2" />
+            <enum name="left_to_right" value="3" />
+        </attr>
+        <attr name="setTypeface">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="italic_bold" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SettingItemView">
+        <attr name="siv_text" format="string" />
+        <attr name="siv_is_gone_bottom_line" format="boolean" />
+        <attr name="siv_start_icon" format="reference" />
+        <attr name="siv_end_icon" format="reference" />
+    </declare-styleable>
+
+    <!--    渐变View-->
+    <declare-styleable name="GradientView">
+        <attr name="gv_start_color" format="color" />
+        <attr name="gv_end_color" format="color" />
+        <attr name="gv_direction">
+            <enum name="TOP_BOTTOM" value="0" />
+            <enum name="TR_BL" value="1" />
+            <enum name="RIGHT_LEFT" value="2" />
+            <enum name="BR_TL" value="3" />
+            <enum name="BOTTOM_TOP" value="4" />
+            <enum name="BL_TR" value="5" />
+            <enum name="LEFT_RIGHT" value="6" />
+            <enum name="TL_BR" value="7" />
+        </attr>
+    </declare-styleable>
+
+</resources>

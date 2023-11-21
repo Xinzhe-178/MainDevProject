@@ -1,0 +1,458 @@
+[
+  {
+    "RightGroup": [
+      {
+        "childId": "1690424985165",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p3.ssl.qhimgs1.com/t019ada178724a63373.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p2.ssl.qhimgs1.com/t017ed997d120b07258.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "http://compimg.go007.com/TestPic/Big/2018/5/2/11/20180502224109455.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p1.ssl.qhimgs1.com/t0119a050af021b0aab.jpg",
+        "isSeckill": true,
+        "originalPrice": 18.0,
+        "price": 16.0,
+        "relevanceId": 0,
+        "rightTitle": "鱼香肉丝饭",
+        "stockCount": 0
+      },
+      {
+        "childId": "1690425370040",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t01c92bffff67ec1d85.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p3.ssl.qhimgs1.com/t01a1ba4ec2c7a1c943.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t010a5d747e0699d71f.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "http://compimg.go007.com/TestPic/Big/2015_06_03/yipin_20150603121004836.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p5.ssl.qhimgs1.com/t01c92bffff67ec1d85.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 14.0,
+        "relevanceId": 0,
+        "rightTitle": "麻婆豆腐饭",
+        "stockCount": 0
+      },
+      {
+        "childId": "1690425381353",
+        "childImageData": {
+          "mImageLists": []
+        },
+        "desc": "",
+        "imageUrl": "https://p0.ssl.qhimgs1.com/t014b9d805ae692fb14.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 14.0,
+        "relevanceId": 0,
+        "rightTitle": "红烧茄子饭",
+        "stockCount": 0
+      }
+    ],
+    "groupId": "1690424974164",
+    "isSelect": true,
+    "leftTitle": "盖饭",
+    "relevanceId": 0
+  },
+  {
+    "RightGroup": [
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "http://www.weimeicun.com/uploads/allimg/180827/1006-1PRF94529347.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p2.ssl.qhimgs1.com/t0184f1a84857dca0b8.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "http://www.weimeicun.com/uploads/allimg/180827/1006-1PRF94529347.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 8.0,
+        "relevanceId": 1,
+        "rightTitle": "油泼面",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t01d2e737640d620fc0.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p2.ssl.qhimgs1.com/t013fa2bda34c86c8a8.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p1.ssl.qhimgs1.com/t01972735536f3f705b.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 12.0,
+        "relevanceId": 1,
+        "rightTitle": "臊子面",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t01581267104f8c3adf.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p2.ssl.qhimgs1.com/t01221a76e5cd4df7d8.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://s1.st.meishij.net/rs/208/121/13280458/n13280458_154605256421781.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 12.0,
+        "relevanceId": 1,
+        "rightTitle": "西红柿鸡蛋面",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p3.ssl.qhimgs1.com/t01ae6535ce4a762023.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t011a75b4df1c83f426.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p1.ssl.qhimgs1.com/t013480e16b32d30e57.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t01a6f9123030606e9f.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p0.ssl.qhimgs1.com/t01d1141a84fc680e8a.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 12.0,
+        "relevanceId": 1,
+        "rightTitle": "炸酱面",
+        "stockCount": 99
+      }
+    ],
+    "groupId": "1690426109875",
+    "isSelect": false,
+    "leftTitle": "面条",
+    "relevanceId": 1
+  },
+  {
+    "RightGroup": [
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t0115929a633d378a6e.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t0187720bb12d8b971a.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p1.ssl.qhimgs1.com/t01878a7e0a51991361.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t019afb8ea32fef4ec6.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t01750ffe25f9d3fac0.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p3.ssl.qhimgs1.com/t01ec1db87690a15d7d.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 5.0,
+        "relevanceId": 1,
+        "rightTitle": "紫菜蛋花汤",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t0154cdf724ece711df.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t01960244f48d7d39f6.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p2.ssl.qhimgs1.com/t0148b2ae99aaba4e42.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 6.0,
+        "relevanceId": 1,
+        "rightTitle": "酸辣汤",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t016059263f4b302734.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t01d2c9897497db071f.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t01f73b5b54ec03179e.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t01b430d9b1d4372d6f.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p2.ssl.qhimgs1.com/t012f1251555a97a232.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 12.0,
+        "relevanceId": 1,
+        "rightTitle": "玉米排骨汤",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p2.ssl.qhimgs1.com/t01e925c9742502de9c.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t0174858efeed7263f0.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "http://dingyue.ws.126.net/h9rfo9dLwLDJcvrfPVPRFop66daXdBbvnVMpLvsQ6eTeI1517932727807compressflag.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 12.0,
+        "relevanceId": 1,
+        "rightTitle": "鲫鱼豆腐汤",
+        "stockCount": 99
+      }
+    ],
+    "groupId": "1690426109875",
+    "isSelect": false,
+    "leftTitle": "汤",
+    "relevanceId": 1
+  },
+  {
+    "RightGroup": [
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p3.ssl.qhimgs1.com/t0158404f26a0d282dd.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p3.ssl.qhimgs1.com/t01a342fee65f0fb979.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p3.ssl.qhimgs1.com/t0107339279ffa9519d.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p3.ssl.qhimgs1.com/t01949b14f82c2194a3.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 5.0,
+        "relevanceId": 1,
+        "rightTitle": "酸梅汤",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t019232f1b2185a6cba.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p2.ssl.qhimgs1.com/t0179bca78f24abf2cc.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p3.ssl.qhimgs1.com/t014b0e26d16873c799.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p0.ssl.qhimgs1.com/t01dd60b544400b3b80.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 4.0,
+        "relevanceId": 1,
+        "rightTitle": "柠檬水",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p1.ssl.qhimgs1.com/t01a4b4db51a3364111.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p0.ssl.qhimgs1.com/t0140e9643e6f21e126.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p3.ssl.qhimgs1.com/t0180daa2f6e98ad17d.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 6.0,
+        "relevanceId": 1,
+        "rightTitle": "珍珠奶茶",
+        "stockCount": 99
+      },
+      {
+        "childId": "1690426148130",
+        "childImageData": {
+          "mImageLists": [
+            {
+              "imgPath": "https://p1.ssl.qhimgs1.com/t01a11767dcf506bee1.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            },
+            {
+              "imgPath": "https://p5.ssl.qhimgs1.com/t012b6dfb7c9d82dfff.jpg",
+              "isAdd": false,
+              "typeIsVideo": false
+            }
+          ]
+        },
+        "desc": "",
+        "imageUrl": "https://p0.ssl.qhimgs1.com/t01e8fd6f8714297efa.jpg",
+        "isSeckill": false,
+        "originalPrice": 0.0,
+        "price": 6.0,
+        "relevanceId": 1,
+        "rightTitle": "红豆奶茶",
+        "stockCount": 99
+      }
+    ],
+    "groupId": "1690426109875",
+    "isSelect": false,
+    "leftTitle": "奶茶",
+    "relevanceId": 1
+  }
+]

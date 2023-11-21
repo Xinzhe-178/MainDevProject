@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--自定义Dialog样式-->
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!--边框-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--模糊-->
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+
+    <!--    公共Dialog标题Style-->
+    <style name="common_dialog_title_style">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:enabled">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#0F1826</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!--    公共Dialog内容Style-->
+    <style name="common_dialog_content_style">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#0F1826</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:enabled">true</item>
+    </style>
+
+    <!--    公共Dialog主操作Style-->
+    <style name="common_dialog_main_style">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">@dimen/dp_60</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">#FFC941</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!--    公共Dialog辅助操作Style-->
+    <style name="common_dialog_auxiliary_style">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">@dimen/dp_60</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">#A9AFB8</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="guide_dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="FullDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+</resources>

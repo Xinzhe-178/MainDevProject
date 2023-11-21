@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dialog"
+            type="com.example.networkpro.ui.view.dialog.PrivacyPolicyDialog" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_child_group"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="@drawable/dialog_privacy_while_bg_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="h,3:3.6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="隐私协议"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toTopOf="@id/ll_button"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:onScrollChange="@{dialog.onScrollChangeListener}">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:gravity="center|left|top"
+                    android:text="@string/str_privacy"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    tools:ignore="RtlHardcoded" />
+
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                android:id="@+id/ll_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/dp_13"
+                android:paddingVertical="@dimen/dp_5"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_47"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialog_priv_exit_bg_shape"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="退出"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold"
+                    app:onClickCall="@{dialog.onExitClick}"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_47"
+                    android:layout_marginStart="@dimen/dp_13"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialog_priv_agree_bg_shape"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="同意"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold"
+                    app:onClickCall="@{dialog.onAgreeClick}"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

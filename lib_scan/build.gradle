@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion androidVersion.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion androidVersion.minSdkVersion
+        targetSdkVersion androidVersion.targetSdkVersion
+        testInstrumentationRunner androidVersion.testInstrumentationRunner
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation androidX.appcompat
+    implementation androidX.material
+    testImplementation androidX.junit
+    androidTestImplementation androidX.extjunit
+    androidTestImplementation androidX.espresso
+
+    api api.mlkit
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="version"
+            type="String" />
+
+        <variable
+            name="appName"
+            type="String" />
+
+        <variable
+            name="activity"
+            type="com.example.networkpro.ui.activity.AboutActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view_bg"
+            android:layout_width="@dimen/dp_165"
+            android:layout_height="@dimen/dp_165"
+            android:layout_marginTop="@dimen/dp_150"
+            android:background="@drawable/gray_round_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_log"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/dp_30"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_splash_gif_bg_200x200"
+            app:layout_constraintBottom_toBottomOf="@id/view_bg"
+            app:layout_constraintLeft_toLeftOf="@id/view_bg"
+            app:layout_constraintRight_toRightOf="@id/view_bg"
+            app:layout_constraintTop_toTopOf="@id/view_bg" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text='@{appName,default=随心点}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/view_bg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text='@{"v"+version,default=v111}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:gravity="center"
+            android:text="因为心中有梦，所以暗里有光，遥遥无期，那又怎样，踮起脚尖，就更接近阳光。"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toTopOf="@id/tv_qq_group"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_qq_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="哲不折 —— QQ交流群：67867867867567"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:onClickCall="@{activity.onQQNumClick}"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

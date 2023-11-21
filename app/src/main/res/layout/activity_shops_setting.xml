@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.networkpro.viewmodel.ShopsSettingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_shop_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/shops_setting_add_shop_bg"
+            android:gravity="center"
+            android:paddingStart="@dimen/sp_15"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingEnd="@dimen/sp_15"
+            android:paddingBottom="@dimen/dp_8"
+            android:text="当前店铺名称："
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <com.example.lib_common.view.RollTextView
+            android:id="@+id/tv_shop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shops_setting_add_shop_bg"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingStart="@dimen/sp_15"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingEnd="@dimen/sp_15"
+            android:paddingBottom="@dimen/dp_8"
+            android:singleLine="true"
+            android:text="添加店铺"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_shop_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_shop_hint"
+            app:layout_constraintTop_toTopOf="@id/tv_shop_hint"
+            app:onClickCall="@{viewModel.onShopClick}"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_shop_address_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/shops_setting_add_shop_bg"
+            android:gravity="center"
+            android:paddingStart="@dimen/sp_15"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingEnd="@dimen/sp_15"
+            android:paddingBottom="@dimen/dp_8"
+            android:text="当前店铺地址："
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_shop_hint"
+            tools:ignore="HardcodedText" />
+
+        <com.example.lib_common.view.RollTextView
+            android:id="@+id/tv_shop_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shops_setting_add_shop_bg"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingStart="@dimen/sp_15"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingEnd="@dimen/sp_15"
+            android:paddingBottom="@dimen/dp_8"
+            android:singleLine="true"
+            android:text="添加店铺"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_shop_address_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_shop_address_hint"
+            app:layout_constraintTop_toTopOf="@id/tv_shop_address_hint"
+            app:onClickCall="@{viewModel.onShopAddressClick}"
+            tools:ignore="HardcodedText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

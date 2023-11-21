@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/tv_test"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:alpha="1"
+            android:rotationX="30"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/tv_test"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:alpha="0.1"
+            android:rotationX="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="1500">
+        <!--        通过点击触发-->
+        <!--        <OnClick-->
+        <!--            app:clickAction="toggle"-->
+        <!--            app:targetId="@id/tv_test" />-->
+
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:dragScale="2"
+            app:touchAnchorId="@id/tv_test"
+            app:touchAnchorSide="bottom" />
+
+    </Transition>
+
+</MotionScene>

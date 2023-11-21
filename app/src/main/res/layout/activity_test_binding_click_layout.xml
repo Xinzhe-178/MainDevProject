@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.example.networkpro.ui.activity.TestBingingClickActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/testItemStyle"
+            android:text="无参数带防抖点击"
+            app:onClickCall="@{activity.mOnBindingClickCall}"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/testItemStyle"
+            android:text="无参数无防抖点击"
+            app:onClickCall="@{activity.mOnBindingClickCall}"
+            app:onIsClosureAntiShake="@{true}"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/testItemStyle"
+            android:text="一个参数 关闭非空校验"
+            app:onClickCall="@{activity.mOnBindingClickParamsCall}"
+            app:onIsCloseGuaranteeNoNull="@{true}"
+            app:onParams1="@{null}"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/testItemStyle"
+            android:text="一个参数防抖点击"
+            app:onClickCall="@{activity.mOnBindingClickParamsCall}"
+            app:onIsClosureAntiShake="@{true}"
+            app:onParams1='@{"我是一个参数"}'
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/testItemStyle"
+            android:text="两个参数 关闭非空校验 无防抖"
+            app:onClickCall="@{activity.mOnBindingClickMoreParamsCall}"
+            app:onIsCloseGuaranteeNoNull="@{true}"
+            app:onIsClosureAntiShake="@{true}"
+            app:onParams1="@{null}"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            style="@style/testItemStyle"
+            android:text="两个参数防抖点击"
+            app:onClickCall="@{activity.mOnBindingClickMoreParamsCall}"
+            app:onParams1='@{"我是第一个参数"}'
+            app:onParams2='@{"我是第二个参数"}'
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</layout>

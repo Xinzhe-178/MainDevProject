@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.example.lib_common.activity.CaptureActivity" />
+
+        <variable
+            name="iconFlashIsOpen"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true">
+
+        <!--    扫描区域 摄像头所呈现-->
+        <com.example.library_barcode.CameraSourcePreview
+            android:id="@+id/preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--    扫码中间的提示框-->
+        <com.example.library_barcode.ViewfinderView
+            android:id="@+id/viewfinderView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:cornerColor="@color/transparent"
+            app:frameLineWidth="0dp"
+            app:laserColor="#F3C076"
+            app:layout_constraintBottom_toTopOf="@id/view_bottom_black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maskColor="@color/transparent" />
+
+        <!--    扫码成功后要停留的页面  不加则会导致扫码成功无任何反应-->
+        <com.example.library_barcode.GraphicOverlay
+            android:id="@+id/graphic_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_50"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/icon_pay_scan_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onClickCall="@{activity.onFinishCommand}" />
+
+        <View
+            android:id="@+id/view_bottom_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_95"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:drawableBottom="@drawable/shape_xiaobaidian_icon"
+            android:drawablePadding="@dimen/dp_15"
+            android:text="扫一扫"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="@id/view_bottom_black"
+            app:layout_constraintRight_toRightOf="@id/view_bottom_black"
+            app:layout_constraintTop_toTopOf="@id/view_bottom_black"
+            tools:ignore="HardcodedText,UseCompatTextViewDrawableXml" />
+
+        <ImageView
+            android:id="@+id/iv_icon_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:src="@drawable/icon_flash_off"
+            app:layout_constraintBottom_toTopOf="@id/view_bottom_black"
+            app:layout_constraintLeft_toLeftOf="@id/view_bottom_black"
+            app:layout_constraintRight_toRightOf="@id/view_bottom_black"
+            app:onClickCall="@{activity.onIconFlashCommand}"
+            app:onIsClosureAntiShake="@{true}"
+            app:setScanFlashIconStateIsOpen="@{iconFlashIsOpen}" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:src="@drawable/icon_scan_photo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/iv_icon_flash"
+            app:layout_constraintRight_toRightOf="@id/view_bottom_black"
+            app:layout_constraintTop_toTopOf="@id/iv_icon_flash"
+            app:onClickCall="@{activity.onIconPhotoCommand}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

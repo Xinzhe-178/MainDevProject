@@ -1,0 +1,9 @@
+rootProject.name = "NetWorkPro"
+include ':app'
+include ':lib_network'
+include ':lib_common'
+include ':lib_bean'
+include ':lib_utils'
+include ':lib_easyphotos'
+include ':lib_scan'
+include ':lib_statistics'

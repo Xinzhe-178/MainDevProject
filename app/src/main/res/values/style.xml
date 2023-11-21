@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    测试条目专用Style-->
+    <style name="testItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/pink</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_marginTop">@dimen/dp_6</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SplashAppTheme" parent="Theme.AppCompat">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@color/splash_bg</item>
+    </style>
+
+    <style name="ShortcutAppTheme" parent="Theme.AppCompat">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@drawable/shortcut_splash_bg</item>
+    </style>
+
+    <style name="updateFoodSelectTypeStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingTop">@dimen/dp_6</item>
+        <item name="android:paddingRight">@dimen/dp_16</item>
+        <item name="android:paddingBottom">@dimen/dp_6</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="updateViewItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="select_control">editText</item>
+        <item name="android:layout_marginTop">@dimen/dp_18</item>
+    </style>
+
+    <style name="homeAllGroupTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/dp_10</item>
+        <item name="android:background">@drawable/home_all_group_tv_bg</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

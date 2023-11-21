@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion androidVersion.compileSdkVersion
+
+    defaultConfig {
+        applicationId androidVersion.applicationId
+        minSdkVersion androidVersion.minSdkVersion
+        targetSdkVersion androidVersion.targetSdkVersion
+        versionCode androidVersion.versionCode
+        versionName androidVersion.versionName
+        testInstrumentationRunner androidVersion.testInstrumentationRunner
+
+        //MultiDex分包方法
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+
+    // gradlew 命令打包配置 可以配置debug类型 这里打debug包一样使用release参数 ./gradlew assemblDebug  ./gradlew assemblRelease
+    signingConfigs {
+        release {
+            storeFile file(signingKey.storeFile)
+            storePassword signingKey.storePassword
+            keyAlias signingKey.keyAlias
+            keyPassword signingKey.keyPassword
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    // 自定义打包名称
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "随心点_${buildType.name}_v${versionName}_${releaseTime()}.apk"
+        }
+    }
+}
+
+dependencies {
+    api project(path: ':lib_common')
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
