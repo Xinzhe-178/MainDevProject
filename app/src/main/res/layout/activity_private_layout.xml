@@ -36,7 +36,7 @@
                 android:layout_margin="@dimen/dp_20"
                 android:background="@drawable/private_cancel_gray_bg_shape"
                 android:gravity="center"
-                android:text="取消授权"
+                android:text="撤回授权"
                 android:textColor="@color/gray"
                 app:onClickCall="@{activity.onCancelClick}"
                 tools:ignore="HardcodedText" />
