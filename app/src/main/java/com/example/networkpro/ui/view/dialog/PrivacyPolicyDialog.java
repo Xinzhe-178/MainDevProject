@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 import com.example.lib_common.binding.call.OnBindingClickCall;
 import com.example.lib_common.binding.call.OnBindingClickParamsCall;
 import com.example.lib_common.dialog.EasyDialog;
+import com.example.lib_common.manage.ContextManager;
 import com.example.lib_common.manage.UserManage;
 import com.example.networkpro.databinding.DialogPrivacyLayoutBinding;
 import com.example.networkpro.ui.activity.BaseSplashActivity;
@@ -42,7 +43,7 @@ public class PrivacyPolicyDialog extends EasyDialog<DialogPrivacyLayoutBinding> 
 
     public OnBindingClickCall onExitClick = () -> {
         if (mActivity != null) {
-            mActivity.finish();
+            ContextManager.exitApp();
         }
     };
 

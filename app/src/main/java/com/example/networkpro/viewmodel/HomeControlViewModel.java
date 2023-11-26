@@ -3,8 +3,6 @@ package com.example.networkpro.viewmodel;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -125,11 +123,8 @@ public class HomeControlViewModel extends BaseViewModel {
             BaseApplication instance1 = (BaseApplication) BaseApplication.getInstance();
             Activity activity = instance1.getActivityManager().getTopActivity();
             DialogManage.init(activity, DialogType.TYPE_A).setDataA("此操作需要重启应用，是否确认？", null, () -> {
-                Context context = ContextManager.getContext();
                 AppStyleManage.setIsShowSquare(!AppStyleManage.isShowSquare());
-                Intent i = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                context.startActivity(i);
+                ContextManager.restartApp();
                 isCanClick = true;
             }, () -> {
 

@@ -13,6 +13,7 @@ import com.example.lib_common.consts.CardDialogConst;
 import com.example.lib_common.consts.Const;
 import com.example.lib_common.consts.EventPath;
 import com.example.lib_common.manage.AppStyleManage;
+import com.example.lib_common.manage.ContextManager;
 import com.example.lib_common.manage.UserManage;
 import com.example.lib_common.topbar.TopBarIsShow;
 import com.example.lib_common.utils.JumpUtils;
@@ -120,7 +121,7 @@ public class MainActivity extends BaseMvvmActivity<ActivityMainBinding, MainView
         }
 
         if ((System.currentTimeMillis() - mExitTime) < 2000) {
-            super.onBackPressed();
+            ContextManager.exitApp();
         } else {
             ToastUtils.show("再按一次退出应用");
         }
