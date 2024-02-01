@@ -55,7 +55,7 @@ android {
     // 自定义打包名称
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "随心点_${buildType.name}_v${versionName}_${releaseTime()}.apk"
+            outputFileName = "Suixindian_${buildType.name}_v${versionName}_${releaseTime()}.apk"
         }
     }
 }
