@@ -50,7 +50,7 @@ public class HomeNewFragment extends BaseFragment<FragmentHomeNewLayoutBinding> 
     }
 
     private void initTab() {
-        mBinding.tab.setTabs("美食", "美女"/*,"美言", "星座"*/);
+        mBinding.tab.setTabs("美食", "美女", "星座");
         mBinding.tab.setCurrentItem(0);
         mBinding.tab.setViewPage(mBinding.viewpage);
     }
@@ -59,8 +59,7 @@ public class HomeNewFragment extends BaseFragment<FragmentHomeNewLayoutBinding> 
         mFragments = new ArrayList<>();
         mFragments.add(new HomeFragment());
         mFragments.add(new BeautyFragment());
-//        mFragments.add(new HomeAllGroupFragment());
-//        mFragments.add(new ConstellationFragment());
+        mFragments.add(new ConstellationFragment());
 
         mBinding.viewpage.setCurrentItem(0);
         mBinding.viewpage.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
