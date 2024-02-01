@@ -43,15 +43,4 @@
         <item name="select_control">editText</item>
         <item name="android:layout_marginTop">@dimen/dp_18</item>
     </style>
-
-    <style name="homeAllGroupTextStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/dp_10</item>
-        <item name="android:background">@drawable/home_all_group_tv_bg</item>
-        <item name="android:padding">@dimen/dp_10</item>
-        <item name="android:textColor">@color/red</item>
-        <item name="android:textSize">@dimen/sp_16</item>
-        <item name="android:textStyle">bold</item>
-    </style>
 </resources>

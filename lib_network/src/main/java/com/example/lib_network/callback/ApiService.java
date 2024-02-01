@@ -78,30 +78,6 @@ public interface ApiService {
     Observable<SeekHotListBean> getSeekHotListData(@Query("type") String type);
 
     /**
-     * 韩小韩 随机笑话
-     *
-     * @return
-     */
-    @GET("/api/joke")
-    Observable<Object> getRandomJokeTextData();
-
-    /**
-     * 韩小韩 随机一句一言
-     *
-     * @return
-     */
-    @GET("/api/ian")
-    Observable<Object> getRandomIanTextData();
-
-    /**
-     * 韩小韩 随机一句情话
-     *
-     * @return
-     */
-    @GET("/api/love")
-    Observable<Object> getRandomLoveTextData();
-
-    /**
      * 韩小韩 每日星座运势
      *
      * @return
