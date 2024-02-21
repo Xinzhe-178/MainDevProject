@@ -94,7 +94,7 @@ public class Net {
 
     private static OkHttpClient getHttpClient() {
         return new OkHttpClient().newBuilder()
-//                .addInterceptor(new RetrofitLogInterceptor(HeaderManage.getCommonHeader()))
+                .addInterceptor(new RetrofitLogInterceptor(HeaderManage.getCommonHeader()))
                 .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS) //连接超时
                 .writeTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)  //读取超时
