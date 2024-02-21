@@ -9,7 +9,13 @@
             name="model"
             type="com.example.lib_bean.bean.RecyclerBean" />
 
+        <variable
+            name="adapter"
+            type="com.example.networkpro.ui.adapter.RecyclerAdapter" />
+
         <import type="android.view.View" />
+
+        <import type="com.example.lib_utils.TextUtils" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -25,11 +31,12 @@
 
             <ImageView
                 android:id="@+id/iv_img"
-                android:layout_width="@dimen/dp_50"
-                android:layout_height="@dimen/dp_50"
-                android:layout_margin="@dimen/dp_10"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_margin="@dimen/dp_8"
                 android:scaleType="centerCrop"
-                app:image_url='@{"https://p0.ssl.qhimgs1.com/t019fa86ec0e1877ae0.jpg"}'
+                android:src="@drawable/ic_favorite_on"
+                android:visibility="@{adapter.isCollect?View.GONE:View.VISIBLE}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -38,21 +45,54 @@
                 android:id="@+id/tv_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_10"
-                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_margin="@dimen/dp_10"
                 android:ellipsize="end"
                 android:enabled="true"
                 android:gravity="center|left|top"
                 android:maxLines="1"
-                android:text="@{model.title}"
+                android:text='@{model.title,default="每日一问  | Java线程栈的栈溢出（StackOverflowError）是如何检测的？"}'
                 android:textColor="@color/red"
                 android:textSize="@dimen/sp_16"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/iv_img"
+                app:layout_constraintBottom_toTopOf="@id/tv_time"
                 app:layout_constraintLeft_toRightOf="@id/iv_img"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/iv_img"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:ellipsize="end"
+                android:enabled="true"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text='@{adapter.getLeftText(model),default="分享人：张风捷特烈"}'
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_time"
+                app:layout_constraintStart_toEndOf="@id/iv_img"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:ellipsize="end"
+                android:enabled="true"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text='@{adapter.isCollect()?"收藏时间："+model.niceDate:"时间："+model.niceShareDate,default="时间：2020-05-24 19:30"}'
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBottom_toBottomOf="@id/tv_author"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_author" />
 
             <View
                 android:layout_width="match_parent"

@@ -33,7 +33,7 @@ public interface ApiService {
      * 封装列表接口调用接口多数据 返回Obj
      */
     @GET("/article/list/{page}/json")
-    Observable<BaseArrBean<RecyclerBean>> getHomeListData(@Path("page") int page);
+    Observable<BaseArrBean<RecyclerBean>> getHomeListData(@Path("page") int page, @Header("Cookie") String userName, @Header("Cookie") String passWord);
 
     /**
      * 获得当前时间 苏宁api

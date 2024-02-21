@@ -56,6 +56,6 @@ public class WanAndroidApiManager extends ApiManager implements WanAndroidApiMan
 
     @Override
     public Observable<BaseArrBean<RecyclerBean>> getHomeDataObservable(int page) {
-        return Net.getApi().getHomeListData(page);
+        return Net.getApi().getHomeListData(page, userName, userPassword);
     }
 }

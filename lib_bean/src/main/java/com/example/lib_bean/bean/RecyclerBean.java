@@ -16,8 +16,8 @@ public class RecyclerBean implements Serializable {
     public String author;
     public boolean canEdit;
     public int chapterId;
-    public String chapterName;
-    public boolean collect;
+    public String chapterName;     // 分类
+    public boolean collect;        // 是否收藏
     public int courseId;
     public String desc;
     public String descMd;
@@ -26,8 +26,8 @@ public class RecyclerBean implements Serializable {
     public String host;
     public int id;
     public String link;
-    public String niceDate;
-    public String niceShareDate;
+    public String niceDate;        // 收藏时间
+    public String niceShareDate;   // 发布时间
     public String origin;
     public String originId;
     public String prefix;
