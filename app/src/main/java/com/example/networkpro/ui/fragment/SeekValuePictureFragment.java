@@ -36,7 +36,6 @@ public class SeekValuePictureFragment extends BaseMvvmRecyclerFragment<SeekValue
     private final SeekInputViewModel mViewModel;
 
     public SeekValuePictureFragment(SeekInputViewModel viewModel) {
-        super();
         mViewModel = viewModel;
     }
 

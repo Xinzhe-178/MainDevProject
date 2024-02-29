@@ -6,6 +6,7 @@ import com.example.lib_common.consts.Const;
 import com.example.lib_common.manage.WanAndroidApiManager;
 import com.example.networkpro.BR;
 import com.example.networkpro.ui.adapter.RecyclerAdapter;
+import com.example.networkpro.viewmodel.SeekInputViewModel;
 
 import io.reactivex.Observable;
 
@@ -15,6 +16,12 @@ import io.reactivex.Observable;
  * Ps:
  */
 public class SeekValueAndroidFragment extends FavoriteFragment {
+
+    private final SeekInputViewModel mViewModel;
+
+    public SeekValueAndroidFragment(SeekInputViewModel viewModel) {
+        mViewModel = viewModel;
+    }
 
     @Override
     public Observable<BaseArrBean<RecyclerBean>> getNetObservable(int page) {
