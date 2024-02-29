@@ -10,6 +10,7 @@ import com.example.lib_utils.KeyboardUtils;
 import com.example.lib_utils.TextUtils;
 import com.example.networkpro.R;
 import com.example.networkpro.databinding.ActivitySeekInputLayoutBinding;
+import com.example.networkpro.ui.fragment.SeekValueFragment;
 import com.example.networkpro.ui.view.CusSeekView;
 import com.example.networkpro.viewmodel.SeekInputViewModel;
 
@@ -62,6 +63,24 @@ public class SeekInputActivity extends BaseMvvmActivity<ActivitySeekInputLayoutB
     @Override
     public Class<SeekInputViewModel> onBindViewModel() {
         return SeekInputViewModel.class;
+    }
+
+    @Override
+    protected void initListener() {
+        super.initListener();
+        // 页面切换监听
+        mViewModel.setFragmentSwitchStateListener(state -> {
+            boolean pageIsHistory = TextUtils.equals(state, Const.SeekInputShowType.SEEK_HISTORY);
+            // 设置搜索类型view是否显示  只在搜索历史页显示，其他页面隐藏
+            mBinding.vSeek.setSeekTypeViewIsShow(pageIsHistory);
+
+            if (TextUtils.equals(state, Const.SeekInputShowType.SEEK_VALUE)) {
+                SeekValueFragment seekValueFragment = mViewModel.getSeekValueFragment();
+                if (seekValueFragment != null) {
+                    seekValueFragment.setValueFragmentState(mBinding.vSeek.getSeekTypeValue().type);
+                }
+            }
+        });
     }
 
     public OnBindingClickCall onCancelClick = () -> {

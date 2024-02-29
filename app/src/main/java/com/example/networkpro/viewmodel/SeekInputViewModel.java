@@ -10,12 +10,14 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.lib_bean.bean.SeekHistoryBean;
 import com.example.lib_common.binding.call.OnBindingClickCall;
+import com.example.lib_common.binding.call.OnBindingClickParamsCall;
 import com.example.lib_common.consts.Const;
 import com.example.lib_common.consts.EventPath;
 import com.example.lib_common.mvvm.BaseViewModel;
 import com.example.lib_utils.KeyboardUtils;
 import com.example.lib_utils.TextUtils;
 import com.example.networkpro.R;
+import com.example.networkpro.call.IFragmentSwitchType;
 import com.example.networkpro.databinding.ActivitySeekInputLayoutBinding;
 import com.example.networkpro.ui.fragment.SeekHistoryFragment;
 import com.example.networkpro.ui.fragment.SeekLenovoFragment;
@@ -29,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
  * E-mail: User_wang_178@163.com
  * Ps:
  */
-public class SeekInputViewModel extends BaseViewModel {
+public class SeekInputViewModel extends BaseViewModel implements IFragmentSwitchType {
     public String SEEK_KEY = "";
 
     /**
@@ -50,9 +52,17 @@ public class SeekInputViewModel extends BaseViewModel {
      * 当前展示的页面(fragment)
      */
     public String showFragmentType;
+    /**
+     * 页面切换监听
+     */
+    private OnBindingClickParamsCall<String> onFragmentSwitchStateListener;
 
     public SeekInputViewModel(@NonNull @NotNull Application application) {
         super(application);
+    }
+
+    public SeekValueFragment getSeekValueFragment() {
+        return mSeekValueFragment;
     }
 
     /**
@@ -137,6 +147,11 @@ public class SeekInputViewModel extends BaseViewModel {
         });
     }
 
+    public void setFragmentSwitchStateListener(OnBindingClickParamsCall<String> listener) {
+        this.onFragmentSwitchStateListener = listener;
+    }
+
+    @Override
     public void setValueFragmentState(String type) {
         if (TextUtils.isEmpty(type)) {
             return;
@@ -168,6 +183,8 @@ public class SeekInputViewModel extends BaseViewModel {
                         .commit();
                 break;
         }
+        if (onFragmentSwitchStateListener != null) {
+            onFragmentSwitchStateListener.clickCall(showFragmentType);
+        }
     }
-
 }

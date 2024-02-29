@@ -4,20 +4,31 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.InputFilter;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.lib_bean.bean.HomeCardShowBean;
 import com.example.lib_common.Interfac.AbsTextWatcher;
 import com.example.lib_common.binding.call.OnBindingClickCall;
 import com.example.lib_common.binding.call.OnBindingClickParamsCall;
+import com.example.lib_common.consts.Const;
 import com.example.lib_common.view.BaseFrameLayout;
+import com.example.lib_common.view.SpinnerView;
+import com.example.lib_utils.DensityUtils;
 import com.example.lib_utils.TextUtils;
 import com.example.lib_utils.ToastUtils;
 import com.example.networkpro.R;
 import com.example.networkpro.databinding.CusSeekViewLayoutBinding;
+import com.example.networkpro.databinding.SeekTypeItemLayoutBinding;
+
+import java.util.ArrayList;
 
 /**
  * Created by 王鑫哲 on 2022/9/3 20:14
@@ -52,6 +63,11 @@ public class CusSeekView extends BaseFrameLayout<CusSeekViewLayoutBinding> {
      * 最大输入长度
      */
     private int maxInputLength = 20;
+
+    /**
+     * 搜索类型默认值
+     */
+    private HomeCardShowBean seekTypeValue;
 
     private OnBindingClickCall mOnTouchListener;
 
@@ -90,6 +106,10 @@ public class CusSeekView extends BaseFrameLayout<CusSeekViewLayoutBinding> {
         super(context, attrs);
     }
 
+    public HomeCardShowBean getSeekTypeValue() {
+        return seekTypeValue;
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     public void build() {
         mBinding.ivLeft.setVisibility(leftSeekLogoIsShow ? VISIBLE : GONE);
@@ -109,7 +129,9 @@ public class CusSeekView extends BaseFrameLayout<CusSeekViewLayoutBinding> {
 
         switch (type) {
             case TYPE_SHOW:
+                mBinding.ivLeft.setVisibility(VISIBLE);
                 mBinding.vClick.setVisibility(VISIBLE);
+                mBinding.vSv.setVisibility(GONE);
                 mBinding.vClick.setOnTouchListener((v, event) -> {
                     if (mOnTouchListener != null) {
                         mOnTouchListener.clickCall();
@@ -119,6 +141,8 @@ public class CusSeekView extends BaseFrameLayout<CusSeekViewLayoutBinding> {
                 break;
             case TYPE_INPUT:
                 mBinding.vClick.setVisibility(GONE);
+                mBinding.ivLeft.setVisibility(GONE);
+                mBinding.vSv.setVisibility(VISIBLE);
                 break;
         }
     }
@@ -165,6 +189,91 @@ public class CusSeekView extends BaseFrameLayout<CusSeekViewLayoutBinding> {
             }
             return false;
         });
+
+        initSv();
+    }
+
+    /**
+     * 设置搜索类型view是否显示
+     * 只在搜索历史页显示，其他页面隐藏
+     */
+    public void setSeekTypeViewIsShow(boolean isShow) {
+        mBinding.vSv.setVisibility(isShow ? VISIBLE : GONE);
+    }
+
+    /**
+     * 初始化搜索类型
+     */
+    @SuppressLint("NotifyDataSetChanged")
+    private void initSv() {
+        final ArrayList<Object> list = new ArrayList<>();
+
+        list.add(new HomeCardShowBean("安卓", false, Const.SeekValueShowType.SEEK_VALUE_ANDROID));
+        list.add(new HomeCardShowBean("图片", false, Const.SeekValueShowType.SEEK_HISTORY_PICTURE));
+        list.add(new HomeCardShowBean("百科", false, Const.SeekValueShowType.SEEK_LENOVO_WIKIPEDIA));
+
+        SeekTypeItemLayoutBinding topView = inflate(R.layout.seek_type_item_layout);
+
+        // 默认显示类型
+        Object defType = list.get(0);
+
+        if (defType instanceof HomeCardShowBean) {
+            HomeCardShowBean data = (HomeCardShowBean) defType;
+            seekTypeValue = data;
+
+            data.iconIsShow = true;
+            topView.tvTitle.setText(seekTypeValue.title);
+        }
+
+        mBinding.vSv
+                .setData(list)
+                .setTopView(topView.getRoot())
+                .setWidthIdEqualTopView(true)
+                .setOpenItemView(R.layout.seek_type_item_layout)
+                .setItemInitCall((view, o) -> {
+                    TextView tv_title = view.findViewById(R.id.tv_title);
+                    if (o instanceof HomeCardShowBean) {
+                        HomeCardShowBean bean1 = (HomeCardShowBean) o;
+                        tv_title.setText(bean1.title);
+
+                        ImageView imageView = view.findViewById(R.id.iv_down_up);
+                        // 由于TopView和ItemView使用的是同一个View 而item的图标有点大不好看 这里调小
+                        ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
+                        layoutParams.width = DensityUtils.dp(8);
+                        layoutParams.height = DensityUtils.dp(8);
+                        imageView.setImageResource(R.drawable.ic_circle);
+                        // 设置指示标是否显示
+                        imageView.setVisibility(bean1.iconIsShow ? View.VISIBLE : View.GONE);
+                        // 直接重置为未选中
+                        bean1.iconIsShow = false;
+                    }
+                })
+                .setItemClickCall((view, o) -> {
+
+                    TextView tv_title = view.findViewById(R.id.tv_title);
+                    if (o instanceof HomeCardShowBean) {
+                        HomeCardShowBean bean1 = (HomeCardShowBean) o;
+                        seekTypeValue = bean1;
+                        tv_title.setText(seekTypeValue.title);
+                        // 将当前点击的设置为显示
+                        bean1.iconIsShow = true;
+                    }
+                    SpinnerView.SpinnerAdapter adapter = mBinding.vSv.getSpinnerAdapter();
+                    if (adapter != null) {
+                        adapter.notifyDataSetChanged();
+                    }
+                })
+                .setOnOpenCall(view -> {
+                    // 展开时设置图标指示为收起
+                    ImageView imageView = topView.getRoot().findViewById(R.id.iv_down_up);
+                    imageView.setImageResource(R.drawable.ic_arrow_up);
+                })
+                .setOnDismissCall(view -> {
+                    // 关闭时设置图标指示为展开
+                    ImageView imageView = topView.getRoot().findViewById(R.id.iv_down_up);
+                    imageView.setImageResource(R.drawable.ic_down);
+                })
+                .build();
     }
 
     public String getInputText() {

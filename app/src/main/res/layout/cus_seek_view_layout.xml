@@ -11,6 +11,7 @@
         android:id="@+id/cl_group"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
         android:background="@drawable/cus_seek_view_bg_shape">
 
         <ImageView
@@ -27,6 +28,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText" />
+
+        <com.example.lib_common.view.SpinnerView
+            android:id="@+id/v_sv"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/iv_left" />
 
         <EditText
             android:id="@+id/ed_input"
@@ -46,10 +53,10 @@
             android:textColor="@color/black"
             android:textColorHint="#AAA7A7"
             android:textSize="@dimen/sp_12"
-            app:layout_constraintBottom_toBottomOf="@id/iv_left"
+            app:layout_constraintBottom_toBottomOf="@id/v_sv"
             app:layout_constraintEnd_toEndOf="@id/iv_clear"
-            app:layout_constraintStart_toEndOf="@id/iv_left"
-            app:layout_constraintTop_toTopOf="@id/iv_left"
+            app:layout_constraintStart_toEndOf="@id/v_sv"
+            app:layout_constraintTop_toTopOf="@id/v_sv"
             tools:ignore="HardcodedText,RtlSymmetry" />
 
         <ImageView

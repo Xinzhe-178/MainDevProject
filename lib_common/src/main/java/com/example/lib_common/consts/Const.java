@@ -114,6 +114,18 @@ public class Const {
     }
 
     /**
+     * 搜索结果页类型
+     */
+    public static final class SeekValueShowType {
+        // 安卓
+        public static final String SEEK_VALUE_ANDROID = "seek_value_android";
+        // 百科
+        public static final String SEEK_LENOVO_WIKIPEDIA = "seek_lenovo_wikipedia";
+        // 图片
+        public static final String SEEK_HISTORY_PICTURE = "seek_history_picture";
+    }
+
+    /**
      * 首页CardDialog弹窗类型
      */
     public static final class HomeCardDialogShowConst {
