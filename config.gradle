@@ -2,9 +2,9 @@ ext {
     androidVersion = [
             applicationId            : 'com.example.networkpro',
             compileSdkVersion        : 32,
-            buildToolsVersion        : '33.0.0',
+            buildToolsVersion        : '32.0.0',
             minSdkVersion            : 26,
-            targetSdkVersion         : 33,
+            targetSdkVersion         : 32,
             versionCode              : 1,
             versionName              : '1.0.0',
             testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner"
