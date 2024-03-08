@@ -64,7 +64,9 @@ public class SeekHotRecyclerView extends RecyclerView {
 
             @Override
             public void onError(String errorMsg) {
-                onLoadStateCall.clickCall(false);
+                if (onLoadStateCall != null) {
+                    onLoadStateCall.clickCall(false);
+                }
             }
         });
     }

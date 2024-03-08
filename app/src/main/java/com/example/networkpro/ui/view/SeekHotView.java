@@ -34,7 +34,10 @@ public class SeekHotView extends BaseFrameLayout<SeekHotLayoutBinding> {
     protected void initView() {
         // 热门搜索模块加载监听 只有加载成功后才会显示该模块
         mBinding.vSeekHot.setOnLoadStateCall(aBoolean -> {
-            mBinding.llGroup.setVisibility(VISIBLE);
+            // 默认就是隐藏，在加载成功后显示
+            if (aBoolean) {
+                mBinding.llGroup.setVisibility(VISIBLE);
+            }
         });
     }
 }
