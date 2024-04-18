@@ -46,12 +46,7 @@ public class SeekHotRecyclerView extends RecyclerView {
 
     private void initData() {
         ApiService apiService = Net.getUrlApiService(Urls.HAN_XIAO_HAN_URL);
-        Net.initNetService(apiService.getSeekHotListData("baiduRD"), new NetCallBack<SeekHotListBean>() {
-            @Override
-            public void onStart() {
-
-            }
-
+        Net.initNetService(apiService.getSeekHotListData(), new NetCallBack<SeekHotListBean>() {
             @Override
             public void onSuccess(SeekHotListBean result) {
                 if (result.data != null) {

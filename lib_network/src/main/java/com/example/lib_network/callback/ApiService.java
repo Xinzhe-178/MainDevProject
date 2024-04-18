@@ -74,8 +74,8 @@ public interface ApiService {
      *
      * @return
      */
-    @GET("/api/hotlist?type=")
-    Observable<SeekHotListBean> getSeekHotListData(@Query("type") String type);
+    @GET("/api/hotlist/baiduRD")
+    Observable<SeekHotListBean> getSeekHotListData();
 
     /**
      * 韩小韩 每日星座运势
