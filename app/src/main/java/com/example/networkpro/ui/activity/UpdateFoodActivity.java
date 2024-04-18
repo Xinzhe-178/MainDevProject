@@ -21,7 +21,7 @@ public class UpdateFoodActivity extends BaseMvvmActivity<ActivityUpdateFoodBindi
 
     @Override
     protected void initView() {
-        mTopBar.setTitle("编辑商品").setTitleColor(R.color.white);
+        mTopBar.setTitle("编辑商品");
         mViewModel.initSelect(mBinding, this);
         mBinding.setViewModel(mViewModel);
         mBinding.viewUpdateContent.setActivity(this);
