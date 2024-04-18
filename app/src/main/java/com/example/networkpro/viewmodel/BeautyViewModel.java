@@ -43,7 +43,7 @@ public class BeautyViewModel extends BaseViewModel {
             mBinding.setPbIsShow(true);
 
             if (mBinding.getIsLike()) {
-                WallpaperUtils.setDesktopWallpaper(mBinding.getModel().imgurl, new WallpaperUtils.OnSetStateCall() {
+                WallpaperUtils.setDesktopWallpaper(mBinding.getModel().url, new WallpaperUtils.OnSetStateCall() {
                     @Override
                     public void setSuccess() {
                         Looper.prepare();

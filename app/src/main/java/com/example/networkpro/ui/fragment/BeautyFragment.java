@@ -117,18 +117,6 @@ public class BeautyFragment extends BaseMvvmFragment<BeautyViewModel, FragmentBe
                     .thumbnail(0.3f)
                     .apply(options)
                     .error(R.drawable.ic_placeholder_view)
-                    .listener(new RequestListener<Drawable>() {
-                        @Override
-                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                            ToastUtils.show("加载失败");
-                            return false;
-                        }
-
-                        @Override
-                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                            return false;
-                        }
-                    })
                     .into(mBinding.ivImage);
         } catch (Exception e) {
             e.printStackTrace();
@@ -136,7 +124,7 @@ public class BeautyFragment extends BaseMvvmFragment<BeautyViewModel, FragmentBe
     }
 
     private String getImagePath() {
-        return !TextUtils.isEmpty(mBeautyBean.imgurl) ? mBeautyBean.imgurl : "";
+        return !TextUtils.isEmpty(mBeautyBean.url) ? mBeautyBean.url : "";
     }
 
     @Override

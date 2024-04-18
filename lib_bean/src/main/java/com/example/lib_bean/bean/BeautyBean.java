@@ -6,14 +6,7 @@ package com.example.lib_bean.bean;
  * Ps:
  */
 public class BeautyBean {
-
     public boolean success;
-    public String imgurl;
-    public InfoDTO info;
-
-    public static class InfoDTO {
-        public int width;
-        public int height;
-        public String type;
-    }
+    public String type;
+    public String url;
 }

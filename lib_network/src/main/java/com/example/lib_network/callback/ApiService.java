@@ -57,7 +57,7 @@ public interface ApiService {
      *
      * @return
      */
-    @GET("/api/mobil.girl?type=json")
+    @GET("/api/wallpaper/mobileGirl?type=json")
     Observable<BeautyBean> getRandomBeautyImage();
 
     /**
