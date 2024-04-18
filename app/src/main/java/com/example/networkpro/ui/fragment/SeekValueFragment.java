@@ -49,7 +49,7 @@ public class SeekValueFragment extends BaseFragment<FragmentSeekValuePictureLayo
                 break;
             case Const.SeekValueShowType.SEEK_LENOVO_WIKIPEDIA:
                 String loadUrl = Urls.BAI_DU_BAI_KE_URl.concat(mViewModel.SEEK_KEY);
-                JumpUtils.jumpWeb(true, loadUrl, "");
+                JumpUtils.jumpWeb(true, loadUrl, mViewModel.SEEK_KEY);
                 mViewModel.setValueFragmentState(Const.SeekInputShowType.SEEK_HISTORY);
                 break;
         }

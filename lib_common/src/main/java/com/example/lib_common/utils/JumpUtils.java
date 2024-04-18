@@ -70,7 +70,6 @@ public class JumpUtils {
         bundle.putString(Const.CommonWebViewPageConst.URL_KEK, link);
         bundle.putBoolean(Const.CommonWebViewPageConst.IS_SHOW_TOP_BAR_KEY, isShowTopBar);
         bundle.putString(Const.CommonWebViewPageConst.TITLE_KEY, title);
-        bundle.putBoolean(Const.CommonWebViewPageConst.TITLE_KEY, false);
         bundle.putString(Const.CommonWebViewPageConst.CUS_VIEW_KEY, cusViewType);
         jump(DefWebViewActivity.class, bundle);
     }

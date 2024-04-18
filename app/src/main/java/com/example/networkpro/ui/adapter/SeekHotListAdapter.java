@@ -30,7 +30,7 @@ public class SeekHotListAdapter extends BaseEasyAdapter<SeekHotListBean.DataDTO,
 
         addItemClickListener((data1, holder1, pos) -> {
             LogUtils.PrintE("data-->" + JSON.toJSONString(data1));
-            JumpUtils.jumpWeb(true, data1.mobilUrl, "");
+            JumpUtils.jumpWeb(true, data1.mobilUrl, data1.title);
         });
     }
 }

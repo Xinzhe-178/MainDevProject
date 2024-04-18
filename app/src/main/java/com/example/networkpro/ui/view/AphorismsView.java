@@ -176,7 +176,7 @@ public class AphorismsView {
             binding.getRoot().setOnClickListener(v -> {
                 String text = TextUtils.getText(binding.tvTitle);
                 String loadUrl = Urls.BAI_DU_COMMON_SEEK_URL.concat(text);
-                JumpUtils.jumpWeb(true, loadUrl, "");
+                JumpUtils.jumpWeb(true, loadUrl, text);
                 LogUtils.PrintD(getClass() + "-> loadUrl = " + loadUrl);
             });
 
