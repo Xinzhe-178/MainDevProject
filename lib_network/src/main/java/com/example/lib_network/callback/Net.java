@@ -123,7 +123,7 @@ public class Net {
         }
 
         if (networkStatusCall == null) {
-            networkStatusCall = () -> ToastUtils.show("网络连接失败，请检查网路是否连接");
+            networkStatusCall = () -> ToastUtils.show("网络连接失败，请检查网络是否连接");
         }
 
         if (!NetUtils.isNetworkAvailable()) {
