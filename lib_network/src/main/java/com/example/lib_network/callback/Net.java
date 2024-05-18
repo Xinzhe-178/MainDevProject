@@ -3,11 +3,12 @@ package com.example.lib_network.callback;
 import com.alibaba.fastjson.JSON;
 import com.example.lib_bean.BaseArrBean;
 import com.example.lib_bean.BaseObjBean;
+import com.example.lib_network.R;
 import com.example.lib_utils.LogUtils;
 import com.example.lib_utils.NetUtils;
+import com.example.lib_utils.Res;
 import com.example.lib_utils.TextUtils;
 import com.example.lib_utils.ToastUtils;
-import com.example.lib_utils.UtilApplication;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -104,7 +105,7 @@ public class Net {
 
     public static <T> void initNetService(Observable<T> observable, NetCallBack<T> netCallBack) {
         initNetService(observable, netCallBack, () -> {
-            ToastUtils.show("网络连接失败，请检查网路是否连接");
+            ToastUtils.show(Res.getString(R.string.common_no_internet_text));
         });
     }
 
@@ -123,7 +124,7 @@ public class Net {
         }
 
         if (networkStatusCall == null) {
-            networkStatusCall = () -> ToastUtils.show("网络连接失败，请检查网络是否连接");
+            networkStatusCall = () -> ToastUtils.show(Res.getString(R.string.common_no_internet_text));
         }
 
         if (!NetUtils.isNetworkAvailable()) {

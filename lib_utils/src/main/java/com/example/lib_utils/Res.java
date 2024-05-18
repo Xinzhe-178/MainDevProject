@@ -26,4 +26,8 @@ public final class Res {
     public static View getView(@LayoutRes int layout) {
         return LayoutInflater.from(UtilApplication.getInstance()).inflate(layout, null, false);
     }
+
+    public static String getString(int string) {
+        return UtilApplication.getInstance().getResources().getString(string);
+    }
 }

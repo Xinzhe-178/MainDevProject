@@ -18,6 +18,7 @@ import com.example.lib_network.callback.NetCallBack;
 import com.example.lib_network.callback.NetworkStatusCall;
 import com.example.lib_network.callback.Request;
 import com.example.lib_utils.LogUtils;
+import com.example.lib_utils.Res;
 import com.example.lib_utils.ToastUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
@@ -307,7 +308,7 @@ public abstract class BaseMvvmRecyclerFragment<VM extends BaseViewModel, T, BAD 
      * 默认列表请求-无网络回调
      */
     protected NetworkStatusCall defNetworkStatusCall = () -> {
-        ToastUtils.show("网络连接失败，请检查网路是否连接");
+        ToastUtils.show(Res.getString(R.string.common_no_internet_text));
         setPlaceholderState(StatePlaceType.NoNetWork);
     };
 
