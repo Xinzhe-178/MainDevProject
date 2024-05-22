@@ -14,9 +14,7 @@ import com.example.lib_common.R;
 import com.example.lib_common.activity.BaseMvvmActivity;
 import com.example.lib_common.consts.Const;
 import com.example.lib_common.databinding.ActivityDefWebviewLayoutBinding;
-import com.example.lib_common.manage.AppStyleManage;
 import com.example.lib_common.topbar.TopBarIsShow;
-import com.example.lib_common.utils.imagepreview.ImagePreviewUtils;
 import com.example.lib_common.web.common.CommonJavascriptInterface;
 import com.example.lib_common.web.common.X5WebChromeClient;
 import com.example.lib_common.web.common.X5WebViewClient;
@@ -38,10 +36,6 @@ public class DefWebViewActivity extends BaseMvvmActivity<ActivityDefWebviewLayou
     private String loadUrl;
     private boolean isShowTopBar;
     private String title;
-    private String cusViewType;
-    private View mCusView;
-
-    private Object mCusData;
 
     // 加载视频相关
     private X5WebChromeClient mWebChromeClient;
@@ -52,19 +46,6 @@ public class DefWebViewActivity extends BaseMvvmActivity<ActivityDefWebviewLayou
     protected void initView() {
         initWebView();
         initTopBar();
-        initCusView();
-    }
-
-    private void initCusView() {
-        if (TextUtils.isEmpty(cusViewType)) {
-            return;
-        }
-
-        mCusView = mViewModel.getCusView(cusViewType, mCusData);
-        if (mCusView != null) {
-            mBinding.flCusView.setVisibility(View.VISIBLE);
-            mBinding.flCusView.addView(mCusView);
-        }
     }
 
     private void initTopBar() {
@@ -83,7 +64,7 @@ public class DefWebViewActivity extends BaseMvvmActivity<ActivityDefWebviewLayou
         // 与js交互
         mBinding.webView.addJavascriptInterface(new CommonJavascriptInterface(this), "injectedObject");
         X5WebViewClient x5WebViewClient = new X5WebViewClient(this);
-        x5WebViewClient.setOpenApp(AppStyleManage.webIsJumpExternal());
+        x5WebViewClient.setOpenApp(true);
         mBinding.webView.setWebViewClient(x5WebViewClient);
         mBinding.webView.loadUrl(loadUrl);
     }
@@ -108,8 +89,6 @@ public class DefWebViewActivity extends BaseMvvmActivity<ActivityDefWebviewLayou
         loadUrl = bundle.getString(Const.CommonWebViewPageConst.URL_KEK);
         isShowTopBar = bundle.getBoolean(Const.CommonWebViewPageConst.IS_SHOW_TOP_BAR_KEY);
         title = bundle.getString(Const.CommonWebViewPageConst.TITLE_KEY);
-        cusViewType = bundle.getString(Const.CommonWebViewPageConst.CUS_VIEW_KEY);
-        mCusData = bundle.getSerializable(Const.CommonWebViewPageConst.CUS_VIEW_DATA_KEY);
     }
 
     @Override
@@ -244,7 +223,7 @@ public class DefWebViewActivity extends BaseMvvmActivity<ActivityDefWebviewLayou
                         Log.e("picUrl", picUrl);
                         switch (which) {
                             case 0:
-                                ImagePreviewUtils.start(mActivity, picUrl, 0);
+                                ToastUtils.show("查看大图");
                                 break;
                             case 1:
                                 SaveUtils.saveImage(picUrl, () -> {

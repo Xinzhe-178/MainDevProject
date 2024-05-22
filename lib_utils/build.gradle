@@ -40,6 +40,5 @@ dependencies {
     api api.retrofit
     api api.retrofitAdapter
     api api.glide
-    api api.transformations
     api api.fastJson
 }

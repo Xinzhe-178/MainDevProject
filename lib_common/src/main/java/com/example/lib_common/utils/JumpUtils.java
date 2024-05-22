@@ -6,17 +6,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
 import com.example.lib_common.BaseApplication;
-import com.example.lib_common.activity.CaptureActivity;
-import com.example.lib_common.activity.CommonContainerActivity;
 import com.example.lib_common.consts.Const;
 import com.example.lib_common.manage.ContextManager;
 import com.example.lib_common.web.DefWebViewActivity;
 import com.example.lib_utils.UtilApplication;
-
-import java.io.Serializable;
 
 /**
  * Created by 王鑫哲 on 2022/5/10 下午 10:39
@@ -27,13 +21,6 @@ public class JumpUtils {
 
     public static <C extends Activity> void jump(Class<C> activity) {
         jump(activity, null);
-    }
-
-    public static void jump(Fragment fragment, String title) {
-        Bundle bundle = new Bundle();
-        bundle.putString(CommonContainerActivity.title, title);
-        bundle.putSerializable("mFragment", (Serializable) fragment);
-        jump(CommonContainerActivity.class, bundle);
     }
 
     public static <C extends Activity> void jump(Class<C> activity, Bundle bundle) {
@@ -89,18 +76,6 @@ public class JumpUtils {
         intent.setData(Uri.parse("tel:".concat(phone)));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         instance.startActivity(intent);
-    }
-
-    /**
-     * 跳转原生扫码页
-     *
-     * @param type 扫码类型 传入android类型
-     */
-    public static void jumpAndroidScan(String type) {
-        Bundle bundle = new Bundle();
-        bundle.putString(Const.ScanType.TYPE, Const.ScanType.TYPE_ANDROID);
-        bundle.putString(Const.ScanType.TYPE_ANDROID, type);
-        JumpUtils.jump(CaptureActivity.class, bundle);
     }
 
     /**

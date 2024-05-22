@@ -9,8 +9,6 @@ import com.example.lib_common.activity.BaseActivity;
 import com.example.lib_common.manage.UserManage;
 import com.example.lib_common.topbar.TopBarIsShow;
 import com.example.lib_common.utils.JumpUtils;
-import com.example.lib_statistics.Statistics;
-import com.example.lib_statistics.StatisticsConst;
 import com.example.lib_utils.GlideUtils;
 import com.example.lib_utils.LogUtils;
 import com.example.lib_utils.RxUtils;
@@ -39,9 +37,6 @@ public abstract class BaseSplashActivity extends BaseActivity<ActivitySplashBind
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        // app启动埋点
-        Statistics.getInstance().addRecord(StatisticsConst.APP_START);
-
         String appVersion = UserManage.getAppVersion();
         if (TextUtils.isEmpty(appVersion) || !TextUtils.equals(appVersion, BuildConfig.VERSION_NAME)) {
             UserManage.setAgreePrivacyDialog(false);
@@ -83,15 +78,13 @@ public abstract class BaseSplashActivity extends BaseActivity<ActivitySplashBind
     }
 
     public void jump() {
-        if (UserManage.getIsLoadGuidePage()) {
-            if (UserManage.getUserIsLogin()) {
-                JumpUtils.jump(MainActivity.class);
-            } else {
-                JumpUtils.jump(LoginActivity.class);
-            }
-        } else {
-            JumpUtils.jump(GuidePageActivity.class);
-        }
+        JumpUtils.jump(MainActivity.class);
+//
+//        if (UserManage.getUserIsLogin()) {
+//            JumpUtils.jump(MainActivity.class);
+//        } else {
+//            JumpUtils.jump(LoginActivity.class);
+//        }
         finish();
     }
 

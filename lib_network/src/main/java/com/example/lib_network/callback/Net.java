@@ -1,8 +1,7 @@
 package com.example.lib_network.callback;
 
 import com.alibaba.fastjson.JSON;
-import com.example.lib_bean.BaseArrBean;
-import com.example.lib_bean.BaseObjBean;
+import com.example.lib_bean.BaseBean;
 import com.example.lib_network.R;
 import com.example.lib_utils.LogUtils;
 import com.example.lib_utils.NetUtils;
@@ -150,18 +149,8 @@ public class Net {
                                 return;
                             }
 
-                            // 玩安卓开放api：errorCode！=0 即为失败
-
-                            if (t instanceof BaseArrBean) {
-                                BaseArrBean bean = (BaseArrBean) t;
-                                if (bean.errorCode == 0) {
-                                    netCallBack.onSuccess(t);
-                                } else {
-                                    netCallBack.onError(bean.errorMsg);
-                                }
-                                LogUtils.PrintD("netCallBack->" + "onSuccess-->t=BaseArrBean->" + JSON.toJSONString(bean));
-                            } else if (t instanceof BaseObjBean) {
-                                BaseObjBean bean = (BaseObjBean) t;
+                            if (t instanceof BaseBean) {
+                                BaseBean bean = (BaseBean) t;
                                 if (bean.errorCode == 0) {
                                     netCallBack.onSuccess(t);
                                 } else {

@@ -15,7 +15,7 @@ public class LoginActivity extends BaseMvvmActivity<ActivityLoginBinding, LoginC
 
     @Override
     protected void initView() {
-        mViewModel.init(mBinding);
+
     }
 
     @Override

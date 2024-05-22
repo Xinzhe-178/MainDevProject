@@ -14,7 +14,6 @@ import com.example.lib_common.manage.ContextManager;
 import com.example.lib_common.manage.UserManage;
 import com.example.networkpro.databinding.DialogPrivacyLayoutBinding;
 import com.example.networkpro.ui.activity.BaseSplashActivity;
-import com.example.networkpro.ui.activity.ShortcutCommonActivity;
 
 /**
  * Created by 王鑫哲 on 2022/8/4 21:07
@@ -52,14 +51,6 @@ public class PrivacyPolicyDialog extends EasyDialog<DialogPrivacyLayoutBinding> 
             BaseSplashActivity activity = (BaseSplashActivity) mActivity;
             activity.jump();
             UserManage.setAgreePrivacyDialog(true);
-        } else if (mActivity != null && mActivity instanceof ShortcutCommonActivity) {
-            ShortcutCommonActivity activity = (ShortcutCommonActivity) mActivity;
-            activity.jump();
-            UserManage.setAgreePrivacyDialog(true);
         }
-    };
-
-    public OnBindingClickParamsCall<Integer> onScrollChangeListener = scrollY -> {
-
     };
 }

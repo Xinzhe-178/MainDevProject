@@ -1,4 +1,4 @@
-package com.example.lib_common.web;
+package com.example.networkpro.viewmodel;
 
 import android.app.Application;
 
@@ -9,12 +9,12 @@ import com.example.lib_common.mvvm.BaseViewModel;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Created by 王鑫哲 on 2022/4/3 上午 11:31
+ * Created by 王鑫哲 on 2024/5/19 21:27
  * E-mail: User_wang_178@163.com
  * Ps:
  */
-public class DefWebViewViewModel extends BaseViewModel {
-    public DefWebViewViewModel(@NonNull @NotNull Application application) {
+public class IdCardUploadViewModel extends BaseViewModel {
+    public IdCardUploadViewModel(@NonNull @NotNull Application application) {
         super(application);
     }
 }

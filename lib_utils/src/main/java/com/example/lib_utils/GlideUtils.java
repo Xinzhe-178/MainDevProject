@@ -158,29 +158,6 @@ public class GlideUtils {
     }
 
     /**
-     * 加载加载高斯模糊图片
-     */
-    @BindingAdapter(value = {"setBlurImageUrl"}, requireAll = false)
-    public static void setLordBlurImageView(ImageView imageView, Object url) {
-        Context context = imageView.getContext();
-        RequestOptions options = new RequestOptions()
-                .fitCenter()
-//                .placeholder(R.drawable.ic_lord_header_bg)
-//                .error(R.drawable.ic_lord_header_bg)
-                .dontAnimate()
-                .transforms(new BlurTransformation(context));
-        try {
-            Glide.with(context)
-                    .load(url)
-                    .apply(options)
-                    .into(imageView);
-        } catch (Exception e) {
-            e.printStackTrace();
-            LogUtils.PrintE(String.format("加载图片错误：setRoundImageUrl()/%s/%s", "", e.getMessage()));
-        }
-    }
-
-    /**
      * 设置image旋转角度
      */
     public static void setAngleImage(ImageView imageView, @DrawableRes int imagePath, int angle) {

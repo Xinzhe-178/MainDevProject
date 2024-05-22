@@ -25,9 +25,6 @@ android {
 dependencies {
     api project(path: ':lib_bean')
     api project(path: ':lib_network')
-    api project(path: ':lib_easyphotos')
-    api project(path: ':lib_scan')
-    api project(path: ':lib_statistics')
 
     api api.okhttp
     api api.retrofitGson
@@ -37,21 +34,12 @@ dependencies {
     api api.retrofitAdapter
     api api.glide
     api api.fastJson
-    api api.mlkit
-    api api.subsampling
-    api api.photoView
     api api.smartRefreshLayout
     api api.rxbinding
     api api.statelayout
     api api.xxPermissions
     api api.lifecycle
-    api api.jsoup
     api api.liveEvent
-    api api.PickerView
     api api.tencent
     api api.immersionbar
-    api api.imagePreview
-
-    api api.flipper
-    api api.soloader
 }

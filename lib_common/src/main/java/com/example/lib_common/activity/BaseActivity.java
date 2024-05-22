@@ -205,20 +205,6 @@ public abstract class BaseActivity<VDB extends ViewDataBinding> extends AppCompa
         configuration.fontScale = 1f;
         applyOverrideConfiguration(configuration);
     }
-//
-//    /**
-//     * 设置APP字体大小不随系统设置而改变的
-//     *
-//     * @return
-//     */
-//    @Override
-//    public Resources getResources() {
-//        Resources res = super.getResources();
-//        Configuration config = new Configuration();
-//        config.setToDefaults();
-//        res.updateConfiguration(config, res.getDisplayMetrics());
-//        return res;
-//    }
 
     /**
      * 快捷加载Fragment方法

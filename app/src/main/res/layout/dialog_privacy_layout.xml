@@ -53,8 +53,7 @@
                 android:layout_marginBottom="@dimen/dp_5"
                 android:fillViewport="true"
                 app:layout_constraintBottom_toTopOf="@id/ll_button"
-                app:layout_constraintTop_toBottomOf="@id/tv_title"
-                app:onScrollChange="@{dialog.onScrollChangeListener}">
+                app:layout_constraintTop_toBottomOf="@id/tv_title">
 
                 <TextView
                     android:layout_width="match_parent"

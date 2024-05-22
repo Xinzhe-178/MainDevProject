@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lib_common.binding.call.OnBindingClickParamsCall;
-import com.example.lib_common.view.CusRecyclerView;
-import com.example.lib_utils.LogUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.Objects;
@@ -24,7 +22,7 @@ public class SmartRecyclerView extends SmartRefreshLayout {
 
     private Context mContext;
 
-    private CusRecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView;
 
     private CusRefreshHeaderView mBaseHeaderView;
 
@@ -50,7 +48,7 @@ public class SmartRecyclerView extends SmartRefreshLayout {
     }
 
     private void initRecyclerViewAll() {
-        mRecyclerView = new CusRecyclerView(mContext);
+        mRecyclerView = new RecyclerView(mContext);
         //移除RecyclerView默认上划/下拉头部/底部蓝色效果
         mRecyclerView.setOverScrollMode(OVER_SCROLL_NEVER);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -94,7 +92,7 @@ public class SmartRecyclerView extends SmartRefreshLayout {
         mRecyclerView.setLayoutManager(layoutManager);
     }
 
-    public CusRecyclerView getRecyclerView() {
+    public RecyclerView getRecyclerView() {
         return mRecyclerView;
     }
 }

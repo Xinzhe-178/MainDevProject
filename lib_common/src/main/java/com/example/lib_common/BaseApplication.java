@@ -12,18 +12,10 @@ import com.example.lib_common.Interfac.FrontDeskStateListenerCall;
 import com.example.lib_common.dialog.TipView;
 import com.example.lib_common.manage.AllActivityManager;
 import com.example.lib_common.receiver.WifiReceiver;
-import com.example.lib_common.utils.imagepreview.ImagePreviewLoader;
 import com.example.lib_utils.LogUtils;
 import com.example.lib_utils.ShareData;
 import com.example.lib_utils.UtilApplication;
-import com.facebook.flipper.android.AndroidFlipperClient;
-import com.facebook.flipper.android.utils.FlipperUtils;
-import com.facebook.flipper.core.FlipperClient;
-import com.facebook.flipper.plugins.inspector.DescriptorMapping;
-import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin;
-import com.facebook.soloader.SoLoader;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.previewlibrary.ZoomMediaLoader;
 
 import io.reactivex.plugins.RxJavaPlugins;
 
@@ -63,14 +55,6 @@ public abstract class BaseApplication extends UtilApplication {
         initFrontDeskStateListener();
         // 初始化网络状态广播
         initWifiReceiver();
-        // 初始化Flipper 调试工具
-        initFlipper();
-        // 初始化图片预览
-        initImagePreview();
-    }
-
-    private void initImagePreview() {
-        ZoomMediaLoader.getInstance().init(new ImagePreviewLoader());
     }
 
     private void rxJavaException() {
@@ -144,14 +128,5 @@ public abstract class BaseApplication extends UtilApplication {
 
     public boolean isFrontDesk() {
         return isFrontDesk;
-    }
-
-    private void initFlipper() {
-        SoLoader.init(this, false);
-        if (BuildConfig.DEBUG && FlipperUtils.shouldEnableFlipper(this)) {
-            FlipperClient client = AndroidFlipperClient.getInstance(this);
-            client.addPlugin(new InspectorFlipperPlugin(this, DescriptorMapping.withDefaults()));
-            client.start();
-        }
     }
 }
