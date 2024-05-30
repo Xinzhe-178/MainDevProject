@@ -1,10 +1,9 @@
 ext {
     androidVersion = [
-            applicationId            : 'com.example.networkprox',
+            applicationId            : 'com.reject.dusty.channel',
             compileSdkVersion        : 32,
-            buildToolsVersion        : '33.0.0',
+            buildToolsVersion        : '32.0.0',
             minSdkVersion            : 26,
-            targetSdkVersion         : 32,
             versionCode              : 1,
             versionName              : '1.0.0',
             testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner"
@@ -48,9 +47,8 @@ ext {
 
     signingKey = [
             storeFile    : 'keystore/app.jks',
-            keyAlias     : 'key0',
-            keyPassword  : '123456',
-            storePassword: '123456',
+            keyAlias     : 'Preter ici',
+            keyPassword  : 'Preter ici',
+            storePassword: 'Preter ici',
     ]
 }
-
