@@ -8,17 +8,14 @@
     <string name="str_logo_bottom_private">Lisez attentivement notre Politique de Confidentialité</string>
     <string name="str_logo_bottom_login">Se Connecter</string>
 
-
     <string name="common_load_hint">xinjichibuleredoufu~></string>
 
     <string name="str_common_dialog_main_hint_text">queding</string>
     <string name="str_common_dialog_auxiliary_hint_text">qvxiao</string>
     <string name="str_common_dialog_ed_hint_text">yueshewenan</string>
 
+    <string name="str_zhengjianshangchuan">Français</string>
+    <string name="str_setting_activity_title">Paramètres</string>
 
-    <string name="str_zhengjianshangchuan">证件上传</string>
-
-    <string name="str_setting_activity_title">设置</string>
-    <string name="str_permissions_activity_title">权限设置</string>
-
+    <string name="str_permissions_activity_title">frQuanXianSetting</string>
 </resources>

@@ -1,11 +1,13 @@
 package com.example.lib_utils;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
 
 /**
  * Created by 王鑫哲 on 2022/5/13 下午 10:28
@@ -29,5 +31,9 @@ public final class Res {
 
     public static String getString(int string) {
         return UtilApplication.getInstance().getResources().getString(string);
+    }
+
+    public static String getString(@NonNull Context context, int string) {
+        return context.getResources().getString(string);
     }
 }

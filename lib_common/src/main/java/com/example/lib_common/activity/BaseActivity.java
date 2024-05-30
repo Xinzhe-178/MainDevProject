@@ -3,6 +3,7 @@ package com.example.lib_common.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 
 import com.example.lib_common.BaseApplication;
+import com.example.lib_common.LanguageUtil.LanguageUtil;
 import com.example.lib_common.R;
 import com.example.lib_common.databinding.ActivityBaseBinding;
 import com.example.lib_common.topbar.TopBarIsShow;
@@ -25,7 +27,6 @@ import com.example.lib_common.topbar.TopBarView;
 import com.example.lib_common.view.stateplaceholderview.IStatePlaceholderView;
 import com.example.lib_common.view.stateplaceholderview.StatePlaceType;
 import com.example.lib_common.view.stateplaceholderview.StatePlaceView;
-import com.example.lib_utils.WatermarkUtils;
 import com.gyf.immersionbar.ImmersionBar;
 
 import java.util.List;
@@ -78,7 +79,7 @@ public abstract class BaseActivity<VDB extends ViewDataBinding> extends AppCompa
 
         mBindingBase.viewTopBar.setTopBarOnClickListener(this);
         // 页面水印
-        WatermarkUtils.show(mActivity);
+//        WatermarkUtils.show(mActivity);
     }
 
     /**
@@ -191,8 +192,16 @@ public abstract class BaseActivity<VDB extends ViewDataBinding> extends AppCompa
     }
 
     @Override
+    public void onContactClickCall() {
+
+    }
+
+    @Override
     protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(newBase);
+        // 设置语言
+        SharedPreferences preferences = newBase.getSharedPreferences("language", Context.MODE_PRIVATE);
+        String selectedLanguage = preferences.getString("language", "");
+        super.attachBaseContext(LanguageUtil.attachBaseContext(newBase, selectedLanguage));
         overrideFontScale(newBase);
     }
 

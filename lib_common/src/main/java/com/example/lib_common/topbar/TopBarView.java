@@ -62,6 +62,11 @@ public class TopBarView extends BaseFrameLayout<TopbarViewBinding> {
                 mTopBarOnClickListener.onTitleClickCall();
             }
         });
+        mBinding.ivContact.setOnClickListener(v -> {
+            if (mTopBarOnClickListener != null) {
+                mTopBarOnClickListener.onContactClickCall();
+            }
+        });
     }
 
     public TopBarView setTitle(String title) {
@@ -76,6 +81,11 @@ public class TopBarView extends BaseFrameLayout<TopbarViewBinding> {
 
     public TopBarView setCloseShow(boolean isShow) {
         mBinding.ivClose.setVisibility(isShow ? VISIBLE : GONE);
+        return this;
+    }
+
+    public TopBarView setContactShow(boolean isShow) {
+        mBinding.ivContact.setVisibility(isShow ? VISIBLE : GONE);
         return this;
     }
 
