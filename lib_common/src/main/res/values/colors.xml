@@ -6,10 +6,17 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="splash_bg">#c6cbca</color>
+    <color name="splash_bg">#F9FBFA</color>
 
     <!--默认系统状态栏颜色 -->
     <color name="default_status_bar_color">#FFFFA07A</color>
+
+
+    <!--    底部Tab背景色-->
+    <color name="mainBottomNavBg">#EBF4F3</color>
+    <color name="E7F1F2">#E7F1F2</color>
+    <color name="def_topBar_Color">#348A7B</color>
+
 
     <!--透明色 -->
     <color name="transparent">#00000000</color>

@@ -30,10 +30,8 @@ public class MainViewModel extends BaseViewModel {
         fragmentSwitch.init(supportFragmentManager, R.id.fl_main, 0, new HomeFragment(), new MineFragment());
 
         binding.navView
-                .setTabDefTitles("首页", "我的")
                 .setDefTabIcons(R.drawable.icon_home_sel_def, R.drawable.icon_master_sel_def)
                 .setSelTabIcons(R.drawable.icon_home_sel_sel, R.drawable.icon_master_sel_sel)
-                .setSelIsBold(true)
                 .build();
 
         // 底部Tab点击监听 并设置对应Fragment状态
