@@ -43,7 +43,7 @@ ext {
             // StateLayout 缺省页框架
             statelayout       : 'io.github.shenzhen2017:compose-statelayout:1.0.0',
             // 权限请求框架：https://github.com/getActivity/XXPermissions
-            xxPermissions     : 'com.github.getActivity:XXPermissions:12.6',
+            xxPermissions     : 'com.github.getActivity:XXPermissions:20.0',
             // viewModel 绑定依赖
             lifecycle         : 'android.arch.lifecycle:extensions:1.1.1',
             // jsoup 用来解析html
