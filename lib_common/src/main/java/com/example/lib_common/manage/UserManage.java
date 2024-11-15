@@ -72,7 +72,7 @@ public class UserManage {
 
     public static String getUserAvatar() {
         String userAvatar = ShareData.getShareStringData(UserConst.USER_AVATAR);
-        String defUserAvatar = "https://c-ssl.duitang.com/uploads/blog/202106/15/20210615084425_774a9.thumb.1000_0.png";
+        String defUserAvatar = "https://vcg00.cfp.cn/creative/vcg/800/new/VCG211437447766.jpg";
         return TextUtils.isEmpty(userAvatar) ? defUserAvatar : userAvatar;
     }
 
